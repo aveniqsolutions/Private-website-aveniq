@@ -127,6 +127,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
+@app.on_event("startup")
+async def startup_db_client():
+    # Create indexes for better query performance
+    await db.contacts.create_index([("created_at", -1)])
+    await db.contacts.create_index("email")
+    await db.status_checks.create_index([("timestamp", -1)])
+    logger.info("Database indexes created successfully")
