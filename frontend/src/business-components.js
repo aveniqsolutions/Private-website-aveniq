@@ -191,31 +191,31 @@ export function Hero() {
   );
 }
 
-// Services Section
+// Services Section with Bento Layout
 export function Services() {
   const services = [
     {
       title: "Landing Pages",
       description: "Fast, responsive landing pages to capture leads and drive conversions",
-      image: IMAGES.service_landing,
-      features: ["Mobile Responsive", "Fast Loading", "SEO Optimized", "Lead Capture Forms"]
+      features: ["Mobile Responsive", "Fast Loading", "SEO Optimized", "Lead Capture Forms"],
+      highlight: "Perfect for marketing campaigns and lead generation"
     },
     {
       title: "Professional Websites",
       description: "Custom websites tailored to your business needs",
-      image: IMAGES.service_websites,
-      features: ["Custom Design", "CMS Integration", "E-commerce Ready", "Analytics Setup"]
+      features: ["Custom Design", "CMS Integration", "E-commerce Ready", "Analytics Setup"],
+      highlight: "Complete business solutions with modern functionality"
     },
     {
       title: "Mobile Apps",
       description: "Simple functional mobile apps to enhance user engagement",
-      image: IMAGES.service_mobile,
-      features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"]
+      features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"],
+      highlight: "Extend your reach with mobile applications"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-900">
+    <section id="services" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -226,32 +226,108 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <div key={index} className="bg-black rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 reveal-up">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover"
-                />
+            <div 
+              key={index} 
+              className={`bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 reveal-up ${
+                index === 1 ? 'md:col-span-2 lg:col-span-1' : ''
+              }`}
+            >
+              {/* Service Header */}
+              <div className="mb-6">
+                <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    {index === 0 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    )}
+                    {index === 1 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    )}
+                    {index === 2 && (
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    )}
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-gray-300 text-lg leading-relaxed">{service.description}</p>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-gray-300 mb-4">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-400">
-                      <svg className="w-4 h-4 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+
+              {/* Highlight */}
+              <div className="mb-6 p-4 bg-blue-600/10 border border-blue-500/20 rounded-xl">
+                <p className="text-blue-300 font-medium">{service.highlight}</p>
+              </div>
+
+              {/* Features List */}
+              <div className="space-y-3">
+                <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                {service.features.map((feature, idx) => (
+                  <div key={idx} className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Call to Action */}
+              <div className="mt-8 pt-6 border-t border-gray-800">
+                <button 
+                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+                  className="w-full bg-gray-800 hover:bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 hover:transform hover:scale-105"
+                >
+                  Get Started
+                </button>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Additional Info Section */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-left">
+            <h3 className="text-xl font-bold text-white mb-4">Why Choose Our Services?</h3>
+            <ul className="space-y-3 text-gray-300">
+              <li className="flex items-start">
+                <span className="text-blue-400 mr-2">•</span>
+                <span>Affordable pricing without compromising quality</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-400 mr-2">•</span>
+                <span>Fast delivery and responsive communication</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-400 mr-2">•</span>
+                <span>Modern, professional designs that convert</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-blue-400 mr-2">•</span>
+                <span>Ongoing support and maintenance included</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-up">
+            <h3 className="text-xl font-bold text-white mb-4">Our Process</h3>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                <span className="text-gray-300">Consultation & Planning</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                <span className="text-gray-300">Design & Development</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                <span className="text-gray-300">Testing & Launch</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                <span className="text-gray-300">Support & Maintenance</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
