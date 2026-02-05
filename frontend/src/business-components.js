@@ -1,0 +1,680 @@
+import React, { useEffect, useMemo, useRef, useState } from "react";
+
+// Logo URLs from user assets
+export const LOGO_URLS = {
+  main: "https://customer-assets.emergentagent.com/job_c5c5fb7d-d1cc-44e0-a158-a80c55348ee2/artifacts/104jed3s_Blue%20%26%20Black%20Technology%20Logo.png",
+  alt: "https://customer-assets.emergentagent.com/job_c5c5fb7d-d1cc-44e0-a158-a80c55348ee2/artifacts/9ax4sj8a_Blue%20%26%20Black%20Technology%20Logo.png"
+};
+
+// Professional business images from vision expert
+export const IMAGES = {
+  // Hero section
+  hero_main: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
+  hero_professional: "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NzAzMDI0MDd8MA&ixlib=rb-4.1.0&q=85",
+  
+  // Services
+  service_websites: "https://images.unsplash.com/photo-1547658719-da2b51169166?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
+  service_mobile: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwzfHx0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDIxMDM5NHww&ixlib=rb-4.1.0&q=85",
+  service_landing: "https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg",
+  
+  // Portfolio
+  portfolio_1: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
+  portfolio_2: "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHw0fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
+  portfolio_3: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+  
+  // Team/About
+  team_main: "https://images.unsplash.com/photo-1758518729371-5ee28c4ddf60?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NzAzMDI0MDd8MA&ixlib=rb-4.1.0&q=85",
+  workspace: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg"
+};
+
+// Navigation Component
+export function NavBar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['home', 'services', 'portfolio', 'about', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
+  };
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <img 
+              src={LOGO_URLS.main} 
+              alt="Aveniq Solutions Logo" 
+              className="h-8 w-auto"
+            />
+            <span className="text-xl font-bold text-white">Aveniq Solutions</span>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'services', label: 'Services' },
+              { id: 'portfolio', label: 'Portfolio' },
+              { id: 'about', label: 'About Us' },
+              { id: 'contact', label: 'Contact' }
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  activeSection === item.id
+                    ? 'text-blue-400'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 rounded-lg mt-2">
+              {[
+                { id: 'home', label: 'Home' },
+                { id: 'services', label: 'Services' },
+                { id: 'portfolio', label: 'Portfolio' },
+                { id: 'about', label: 'About Us' },
+                { id: 'contact', label: 'Contact' }
+              ].map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    activeSection === item.id
+                      ? 'text-blue-400 bg-gray-800'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+}
+
+// Hero Section
+export function Hero() {
+  return (
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={IMAGES.hero_main} 
+          alt="Web Development" 
+          className="w-full h-full object-cover opacity-20"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="reveal-up">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Bring Your Business
+            <span className="block text-blue-400">Online Today</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Professional websites, fast landing pages, and functional mobile apps 
+            that help businesses establish a strong digital presence they can afford.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            >
+              View Our Services
+            </button>
+            <button 
+              onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
+              className="border border-gray-600 hover:border-gray-400 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            >
+              See Our Work
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Services Section
+export function Services() {
+  const services = [
+    {
+      title: "Landing Pages",
+      description: "Fast, responsive landing pages to capture leads and drive conversions",
+      image: IMAGES.service_landing,
+      features: ["Mobile Responsive", "Fast Loading", "SEO Optimized", "Lead Capture Forms"]
+    },
+    {
+      title: "Professional Websites",
+      description: "Custom websites tailored to your business needs",
+      image: IMAGES.service_websites,
+      features: ["Custom Design", "CMS Integration", "E-commerce Ready", "Analytics Setup"]
+    },
+    {
+      title: "Mobile Apps",
+      description: "Simple functional mobile apps to enhance user engagement",
+      image: IMAGES.service_mobile,
+      features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"]
+    }
+  ];
+
+  return (
+    <section id="services" className="py-20 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 reveal-up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Our Services
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            We offer comprehensive digital solutions to help your business thrive online
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div key={index} className="bg-black rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 reveal-up">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                <p className="text-gray-300 mb-4">{service.description}</p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-sm text-gray-400">
+                      <svg className="w-4 h-4 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Portfolio Section
+export function Portfolio() {
+  const projects = [
+    {
+      title: "E-commerce Platform",
+      category: "Professional Website",
+      description: "Modern e-commerce solution with payment integration",
+      image: IMAGES.portfolio_1,
+      tech: ["React", "Node.js", "MongoDB", "Stripe"]
+    },
+    {
+      title: "Corporate Dashboard",
+      category: "Web Application",
+      description: "Real-time analytics dashboard for business insights",
+      image: IMAGES.portfolio_2,
+      tech: ["Vue.js", "Python", "PostgreSQL", "Chart.js"]
+    },
+    {
+      title: "Mobile Fitness App",
+      category: "Mobile Application",
+      description: "Cross-platform fitness tracking application",
+      image: IMAGES.portfolio_3,
+      tech: ["React Native", "Firebase", "Redux", "API Integration"]
+    }
+  ];
+
+  return (
+    <section id="portfolio" className="py-20 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 reveal-up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Our Portfolio
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Showcasing our latest projects and successful digital transformations
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <div key={index} className="group cursor-pointer reveal-up">
+              <div className="relative overflow-hidden rounded-xl bg-gray-900">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
+                  <span className="text-blue-400 text-sm font-medium">{project.category}</span>
+                  <h3 className="text-xl font-bold text-white mt-1">{project.title}</h3>
+                  <p className="text-gray-300 text-sm mt-2">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {project.tech.map((tech, idx) => (
+                      <span key={idx} className="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-xs">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// About Section
+export function About() {
+  return (
+    <section id="about" className="py-20 bg-gray-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="reveal-left">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              About Aveniq Solutions
+            </h2>
+            <p className="text-lg text-gray-300 mb-6">
+              We specialize in helping businesses, startups, and individuals establish 
+              a strong online presence with professional, modern, and affordable digital solutions.
+            </p>
+            <p className="text-gray-300 mb-6">
+              Our mission is to make high-quality web development accessible to everyone. 
+              We believe that every business deserves a professional digital presence that 
+              communicates trust, innovation, and professionalism.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">50+</h3>
+                <p className="text-gray-300">Projects Completed</p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-blue-400 mb-2">100%</h3>
+                <p className="text-gray-300">Client Satisfaction</p>
+              </div>
+            </div>
+          </div>
+          <div className="reveal-up">
+            <img 
+              src={IMAGES.team_main} 
+              alt="Professional Team" 
+              className="w-full h-96 object-cover rounded-xl"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Contact Form Component
+export function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required';
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Email is invalid';
+    }
+    
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required';
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required';
+    }
+    
+    return newErrors;
+  };
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: ''
+      }));
+    }
+  };
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Validate form
+    const formErrors = validateForm();
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      setStatus('');
+      return;
+    }
+    
+    setIsLoading(true);
+    setStatus('');
+    
+    try {
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const response = await fetch(`${backendUrl}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        setStatus(data.message || 'Message sent successfully! We will contact you soon.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setErrors({});
+      } else {
+        setStatus('Error: ' + (data.detail || data.message || 'Failed to send message'));
+      }
+    } catch (error) {
+      setStatus('Error: Unable to send message. Please try again later.');
+      console.error('Contact form error:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  return (
+    <div className="bg-black rounded-xl p-8">
+      <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+              Name *
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.name ? 'border-red-500' : 'border-gray-600'
+              }`}
+              placeholder="Your full name"
+            />
+            {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
+          </div>
+          
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+              Email *
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                errors.email ? 'border-red-500' : 'border-gray-600'
+              }`}
+              placeholder="your.email@example.com"
+            />
+            {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+          </div>
+        </div>
+        
+        <div>
+          <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
+            Subject *
+          </label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={formData.subject}
+            onChange={handleChange}
+            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+              errors.subject ? 'border-red-500' : 'border-gray-600'
+            }`}
+            placeholder="What is this about?"
+          />
+          {errors.subject && <p className="text-red-400 text-sm mt-1">{errors.subject}</p>}
+        </div>
+        
+        <div>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+            Message *
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="5"
+            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none ${
+              errors.message ? 'border-red-500' : 'border-gray-600'
+            }`}
+            placeholder="Tell us about your project..."
+          ></textarea>
+          {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+        </div>
+        
+        <button 
+          type="submit" 
+          disabled={isLoading}
+          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+        >
+          {isLoading ? 'Sending...' : 'Send Message'}
+        </button>
+      </form>
+      
+      {status && (
+        <div className={`mt-4 p-4 rounded-lg ${
+          status.includes('Error') 
+            ? 'bg-red-900/50 text-red-300 border border-red-800' 
+            : 'bg-green-900/50 text-green-300 border border-green-800'
+        }`}>
+          {status}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// Contact Section
+export function Contact() {
+  return (
+    <section id="contact" className="py-20 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 reveal-up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Ready to bring your business online? Let's discuss your project and 
+            create something amazing together.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="reveal-left">
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <span className="text-gray-300">contact@aveniq-solutions.com</span>
+                  </div>
+                  <div className="flex items-center">
+                    <svg className="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-gray-300">Response within 24 hours</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-bold text-white mb-4">Why Choose Us?</h3>
+                <ul className="space-y-3">
+                  {[
+                    "Affordable pricing for quality work",
+                    "Fast turnaround times",
+                    "Modern, responsive designs",
+                    "Ongoing support and maintenance",
+                    "SEO-optimized solutions"
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center text-gray-300">
+                      <svg className="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <div className="reveal-up">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Footer
+export function Footer() {
+  return (
+    <footer className="bg-gray-900 border-t border-gray-800 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <div className="flex items-center space-x-3 mb-4">
+              <img 
+                src={LOGO_URLS.main} 
+                alt="Aveniq Solutions Logo" 
+                className="h-8 w-auto"
+              />
+              <span className="text-xl font-bold text-white">Aveniq Solutions</span>
+            </div>
+            <p className="text-gray-400">
+              Professional web development services to help your business thrive online.
+            </p>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>Landing Pages</li>
+              <li>Professional Websites</li>
+              <li>Mobile Applications</li>
+              <li>E-commerce Solutions</li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-white font-semibold mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-400">
+              <li>contact@aveniq-solutions.com</li>
+              <li>Professional Support</li>
+              <li>Quick Response Time</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p className="text-gray-400">
+            © 2024 Aveniq Solutions. All rights reserved. Built with modern technology.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
