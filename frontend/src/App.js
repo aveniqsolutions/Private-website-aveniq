@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { NavBar, Hero, MeetAura, Features, DesignStyles, Specs, Testimonials, FAQ, PricingAnchor, ContactSection, FooterCta } from "./components";
+import { NavBar, Hero, Services, Portfolio, About, Contact, Footer } from "./business-components";
 
 function useGlobalRevealObserver() {
   useEffect(() => {
