@@ -678,7 +678,7 @@ export function ContactForm() {
 // Contact Section
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-black">
+    <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal-up">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -693,27 +693,31 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="reveal-left">
             <div className="space-y-8">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4">Contact Information</h3>
+              <div className="bg-black border border-gray-800 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <svg className="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
                     <span className="text-gray-300">contact@aveniq-solutions.com</span>
                   </div>
                   <div className="flex items-center">
-                    <svg className="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4">
+                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
                     <span className="text-gray-300">Response within 24 hours</span>
                   </div>
                 </div>
               </div>
               
-              <div>
-                <h3 className="text-xl font-bold text-white mb-4">Why Choose Us?</h3>
-                <ul className="space-y-3">
+              <div className="bg-black border border-gray-800 rounded-2xl p-8">
+                <h3 className="text-xl font-bold text-white mb-6">Why Choose Us?</h3>
+                <ul className="space-y-4">
                   {[
                     "Affordable pricing for quality work",
                     "Fast turnaround times",
@@ -722,9 +726,7 @@ export function Contact() {
                     "SEO-optimized solutions"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300">
-                      <svg className="w-5 h-5 text-blue-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
                       {item}
                     </li>
                   ))}
