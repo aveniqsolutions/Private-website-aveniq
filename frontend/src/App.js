@@ -31,16 +31,12 @@ function Home() {
       <NavBar />
       <Hero />
       <main>
-        <MeetAura />
-        <Features />
-        <DesignStyles />
-        <Specs />
-        <Testimonials />
-        <FAQ />
-        <PricingAnchor />
-        <ContactSection />
-        <FooterCta />
+        <Services />
+        <Portfolio />
+        <About />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }
