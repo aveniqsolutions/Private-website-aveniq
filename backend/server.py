@@ -67,8 +67,45 @@ async def create_status_check(input: StatusCheckCreate):
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
-    status_checks = await db.status_checks.find().to_list(1000)
+    status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
     return [StatusCheck(**status_check) for status_check in status_checks]
+
+@api_router.post("/contact", response_model=ContactMessageResponse)
+async def submit_contact_form(
+    contact: ContactMessage,
+    background_tasks: BackgroundTasks
+) -> ContactMessageResponse:
+    """
+    Accept contact form submission, store in MongoDB, and send admin notification
+    """
+    try:
+        # Prepare document for MongoDB
+        contact_dict = contact.model_dump()
+        contact_dict["created_at"] = datetime.now(timezone.utc)
+        contact_dict["email_status"] = "pending"
+        
+        # Insert into MongoDB
+        result = await db.contacts.insert_one(contact_dict)
+        inserted_id = str(result.inserted_id)
+        
+        # Add background task to send email
+        background_tasks.add_task(
+            send_email_background,
+            contact_dict
+        )
+        
+        return ContactMessageResponse(
+            success=True,
+            message="Contact form submitted successfully! We'll get back to you soon.",
+            contact_id=inserted_id
+        )
+        
+    except Exception as e:
+        logger.error(f"Error processing contact form: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error processing contact form: {str(e)}"
+        )
 
 # Include the router in the main app
 app.include_router(api_router)
