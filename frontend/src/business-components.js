@@ -406,7 +406,7 @@ export function Portfolio() {
 // About Section
 export function About() {
   return (
-    <section id="about" className="py-20 bg-gray-900">
+    <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="reveal-left">
@@ -423,22 +423,55 @@ export function About() {
               communicates trust, innovation, and professionalism.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">50+</h3>
+              <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-blue-400 mb-2">50+</h3>
                 <p className="text-gray-300">Projects Completed</p>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold text-blue-400 mb-2">100%</h3>
+              <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
+                <h3 className="text-3xl font-bold text-blue-400 mb-2">100%</h3>
                 <p className="text-gray-300">Client Satisfaction</p>
               </div>
             </div>
           </div>
           <div className="reveal-up">
-            <img 
-              src={IMAGES.team_main} 
-              alt="Professional Team" 
-              className="w-full h-96 object-cover rounded-xl"
-            />
+            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6">Our Values</h3>
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2">Quality First</h4>
+                    <p className="text-gray-300 text-sm">Every project is built with attention to detail and modern best practices.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2">Fast Delivery</h4>
+                    <p className="text-gray-300 text-sm">Quick turnaround times without compromising on quality.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-2">Ongoing Support</h4>
+                    <p className="text-gray-300 text-sm">Continuous support and maintenance for your digital presence.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
