@@ -436,7 +436,11 @@ export function ContactForm() {
     setStatus('');
     
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
+      const backendUrl = process.env.REACT_APP_BACKEND_URL;
+      if (!backendUrl) {
+        throw new Error('Backend URL not configured. Please contact support.');
+      }
+      
       const response = await fetch(`${backendUrl}/api/contact`, {
         method: 'POST',
         headers: {
