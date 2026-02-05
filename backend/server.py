@@ -32,10 +32,26 @@ api_router = APIRouter(prefix="/api")
 class StatusCheck(BaseModel):
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+def send_email_background(contact_data: dict):
+    """Background task to send email without blocking response"""
+    email_service = EmailService()
+    success, message = email_service.send_contact_notification(
+        recipient_name=contact_data["name"],
+        recipient_email=contact_data["email"],
+        subject=contact_data["subject"],
+        message=contact_data["message"]
+    )
+    
+    # Log the result for debugging
+    if not success:
+        logger.error(f"Failed to send email: {message}")
+    else:
+        logger.info(f"Email sent successfully for contact from {contact_data['email']}")
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
