@@ -156,7 +156,7 @@ export function NavBar() {
   );
 }
 
-// Hero Section
+// Hero Section with Neon Green Shadows
 export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
@@ -172,24 +172,26 @@ export function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="reveal-up">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6"
+              style={{ textShadow: '0 0 30px rgba(34, 197, 94, 0.3)' }}>
             Bring Your Business
-            <span className="block text-blue-400">Online Today</span>
+            <span className="block text-green-400" style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.5)' }}>Online Today</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Professional websites, fast landing pages, and functional mobile apps 
+            Professional websites, fast landing pages, functional mobile apps, and stunning video content 
             that help businesses establish a strong digital presence they can afford.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:transform hover:scale-105 border border-green-500"
+              style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
             >
               View Our Services
             </button>
             <button 
               onClick={() => document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' })}
-              className="border border-gray-600 hover:border-gray-400 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+              className="border border-gray-600 hover:border-green-400 text-white hover:text-green-400 px-8 py-3 rounded-lg font-semibold transition-all duration-200 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-green-400/20"
             >
               See Our Work
             </button>
