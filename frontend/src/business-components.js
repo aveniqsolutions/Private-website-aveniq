@@ -6,25 +6,9 @@ export const LOGO_URLS = {
   alt: "https://customer-assets.emergentagent.com/job_c5c5fb7d-d1cc-44e0-a158-a80c55348ee2/artifacts/9ax4sj8a_Blue%20%26%20Black%20Technology%20Logo.png"
 };
 
-// Professional business images from vision expert
+// Hero background image
 export const IMAGES = {
-  // Hero section
-  hero_main: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
-  hero_professional: "https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NzAzMDI0MDd8MA&ixlib=rb-4.1.0&q=85",
-  
-  // Services
-  service_websites: "https://images.unsplash.com/photo-1547658719-da2b51169166?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwyfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
-  service_mobile: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwzfHx0ZWNobm9sb2d5fGVufDB8fHx8MTc3MDIxMDM5NHww&ixlib=rb-4.1.0&q=85",
-  service_landing: "https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg",
-  
-  // Portfolio
-  portfolio_1: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwzfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
-  portfolio_2: "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHw0fHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85",
-  portfolio_3: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-  
-  // Team/About
-  team_main: "https://images.unsplash.com/photo-1758518729371-5ee28c4ddf60?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzc3xlbnwwfHx8fDE3NzAzMDI0MDd8MA&ixlib=rb-4.1.0&q=85",
-  workspace: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg"
+  hero_main: "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTN8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudHxlbnwwfHx8fDE3NzAzMDI0MDB8MA&ixlib=rb-4.1.0&q=85"
 };
 
 // Navigation Component with Neon Green Shadows
