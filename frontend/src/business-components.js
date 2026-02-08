@@ -27,7 +27,7 @@ export const IMAGES = {
   workspace: "https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg"
 };
 
-// Navigation Component
+// Navigation Component with Neon Green Shadows
 export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -63,7 +63,8 @@ export function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-gray-800"
+         style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -72,6 +73,7 @@ export function NavBar() {
               src={LOGO_URLS.main} 
               alt="Aveniq Solutions Logo" 
               className="h-8 w-auto"
+              style={{ filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.3))' }}
             />
             <span className="text-xl font-bold text-white">Aveniq Solutions</span>
           </div>
@@ -88,11 +90,14 @@ export function NavBar() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-sm font-medium transition-all duration-200 ${
                   activeSection === item.id
-                    ? 'text-blue-400'
-                    : 'text-gray-300 hover:text-white'
+                    ? 'text-green-400 shadow-sm'
+                    : 'text-gray-300 hover:text-green-400'
                 }`}
+                style={{
+                  textShadow: activeSection === item.id ? '0 0 10px rgba(34, 197, 94, 0.5)' : 'none'
+                }}
               >
                 {item.label}
               </button>
@@ -103,7 +108,7 @@ export function NavBar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+              className="text-gray-300 hover:text-green-400 focus:outline-none transition-colors duration-200"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isMenuOpen ? (
@@ -119,7 +124,8 @@ export function NavBar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-900 rounded-lg mt-2 border border-gray-800"
+                 style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.2)' }}>
               {[
                 { id: 'home', label: 'Home' },
                 { id: 'services', label: 'Services' },
@@ -130,11 +136,14 @@ export function NavBar() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
                     activeSection === item.id
-                      ? 'text-blue-400 bg-gray-800'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                      ? 'text-green-400 bg-gray-800 shadow-md'
+                      : 'text-gray-300 hover:text-green-400 hover:bg-gray-800'
                   }`}
+                  style={{
+                    boxShadow: activeSection === item.id ? '0 0 10px rgba(34, 197, 94, 0.3)' : 'none'
+                  }}
                 >
                   {item.label}
                 </button>
