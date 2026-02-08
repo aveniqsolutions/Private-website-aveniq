@@ -652,14 +652,15 @@ export function Portfolio() {
   );
 }
 
-// About Section
+// About Section with Neon Green Shadows
 export function About() {
   return (
     <section id="about" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="reveal-left">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6"
+                style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.3)' }}>
               About Aveniq Solutions
             </h2>
             <p className="text-lg text-gray-300 mb-6">
@@ -667,28 +668,42 @@ export function About() {
               a strong online presence with professional, modern, and affordable digital solutions.
             </p>
             <p className="text-gray-300 mb-6">
-              Our mission is to make high-quality web development accessible to everyone. 
+              Our mission is to make high-quality web development and content creation accessible to everyone. 
               We believe that every business deserves a professional digital presence that 
               communicates trust, innovation, and professionalism.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
-                <h3 className="text-3xl font-bold text-blue-400 mb-2">50+</h3>
+              <div 
+                className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center hover:border-green-400 transition-all duration-300"
+                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+              >
+                <h3 className="text-3xl font-bold text-green-400 mb-2" 
+                    style={{ textShadow: '0 0 15px rgba(34, 197, 94, 0.5)' }}>50+</h3>
                 <p className="text-gray-300">Projects Completed</p>
               </div>
-              <div className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
-                <h3 className="text-3xl font-bold text-blue-400 mb-2">100%</h3>
+              <div 
+                className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center hover:border-green-400 transition-all duration-300"
+                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+              >
+                <h3 className="text-3xl font-bold text-green-400 mb-2"
+                    style={{ textShadow: '0 0 15px rgba(34, 197, 94, 0.5)' }}>100%</h3>
                 <p className="text-gray-300">Client Satisfaction</p>
               </div>
             </div>
           </div>
           <div className="reveal-up">
-            <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+            <div 
+              className="bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
+              style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+            >
               <h3 className="text-2xl font-bold text-white mb-6">Our Values</h3>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div 
+                    className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border border-green-400/20"
+                    style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+                  >
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -698,8 +713,11 @@ export function About() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div 
+                    className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border border-green-400/20"
+                    style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+                  >
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
                   </div>
@@ -709,8 +727,11 @@ export function About() {
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                    <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div 
+                    className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 border border-green-400/20"
+                    style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+                  >
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                     </svg>
                   </div>
