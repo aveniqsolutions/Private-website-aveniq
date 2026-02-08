@@ -198,19 +198,29 @@ export function Services() {
       title: "Landing Pages",
       description: "Fast, responsive landing pages to capture leads and drive conversions",
       features: ["Mobile Responsive", "Fast Loading", "SEO Optimized", "Lead Capture Forms"],
-      highlight: "Perfect for marketing campaigns and lead generation"
+      highlight: "Perfect for marketing campaigns and lead generation",
+      icon: "M13 10V3L4 14h7v7l9-11h-7z"
     },
     {
       title: "Professional Websites",
       description: "Custom websites tailored to your business needs",
       features: ["Custom Design", "CMS Integration", "E-commerce Ready", "Analytics Setup"],
-      highlight: "Complete business solutions with modern functionality"
+      highlight: "Complete business solutions with modern functionality",
+      icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
     },
     {
       title: "Mobile Apps",
       description: "Simple functional mobile apps to enhance user engagement",
       features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"],
-      highlight: "Extend your reach with mobile applications"
+      highlight: "Extend your reach with mobile applications",
+      icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+    },
+    {
+      title: "Video & Content Creation",
+      description: "Professional video editing and animation for engaging content",
+      features: ["Adobe Premiere Pro", "After Effects", "CapCut", "Canva Design", "2D & 3D Animation"],
+      highlight: "Bring your brand to life with stunning visual content",
+      icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
     }
   ];
 
@@ -226,28 +236,23 @@ export function Services() {
           </p>
         </div>
 
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Bento Grid Layout with Neon Green Shadows */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <div 
               key={index} 
-              className={`bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 reveal-up ${
+              className={`bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300 reveal-up shadow-lg hover:shadow-green-400/20 ${
                 index === 1 ? 'md:col-span-2 lg:col-span-1' : ''
-              }`}
+              } ${index === 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+              style={{
+                boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+              }}
             >
               {/* Service Header */}
               <div className="mb-6">
-                <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {index === 0 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    )}
-                    {index === 1 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    )}
-                    {index === 2 && (
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                    )}
+                <div className="w-12 h-12 bg-green-400/20 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-400/30">
+                  <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
@@ -255,8 +260,8 @@ export function Services() {
               </div>
 
               {/* Highlight */}
-              <div className="mb-6 p-4 bg-blue-600/10 border border-blue-500/20 rounded-xl">
-                <p className="text-blue-300 font-medium">{service.highlight}</p>
+              <div className="mb-6 p-4 bg-green-400/10 border border-green-400/20 rounded-xl shadow-inner shadow-green-400/10">
+                <p className="text-green-300 font-medium">{service.highlight}</p>
               </div>
 
               {/* Features List */}
@@ -264,7 +269,7 @@ export function Services() {
                 <h4 className="text-white font-semibold mb-3">Key Features:</h4>
                 {service.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 shadow-sm shadow-green-400/50"></div>
                     <span className="text-gray-300">{feature}</span>
                   </div>
                 ))}
@@ -274,7 +279,7 @@ export function Services() {
               <div className="mt-8 pt-6 border-t border-gray-800">
                 <button 
                   onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full bg-gray-800 hover:bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 hover:transform hover:scale-105"
+                  className="w-full bg-gray-800 hover:bg-green-600 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-green-400/30 border border-gray-700 hover:border-green-400"
                 >
                   Get Started
                 </button>
@@ -283,47 +288,57 @@ export function Services() {
           ))}
         </div>
 
-        {/* Additional Info Section */}
+        {/* Additional Info Section with Neon Green Shadows */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-left">
+          <div 
+            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-left hover:border-green-400 transition-all duration-300"
+            style={{
+              boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+            }}
+          >
             <h3 className="text-xl font-bold text-white mb-4">Why Choose Our Services?</h3>
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
+                <span className="text-green-400 mr-2 shadow-sm shadow-green-400/50">•</span>
                 <span>Affordable pricing without compromising quality</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
+                <span className="text-green-400 mr-2 shadow-sm shadow-green-400/50">•</span>
                 <span>Fast delivery and responsive communication</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
+                <span className="text-green-400 mr-2 shadow-sm shadow-green-400/50">•</span>
                 <span>Modern, professional designs that convert</span>
               </li>
               <li className="flex items-start">
-                <span className="text-blue-400 mr-2">•</span>
+                <span className="text-green-400 mr-2 shadow-sm shadow-green-400/50">•</span>
                 <span>Ongoing support and maintenance included</span>
               </li>
             </ul>
           </div>
           
-          <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-up">
+          <div 
+            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 reveal-up hover:border-green-400 transition-all duration-300"
+            style={{
+              boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+            }}
+          >
             <h3 className="text-xl font-bold text-white mb-4">Our Process</h3>
             <div className="space-y-4">
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">1</div>
+                <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shadow-lg shadow-green-400/30">1</div>
                 <span className="text-gray-300">Consultation & Planning</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">2</div>
+                <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shadow-lg shadow-green-400/30">2</div>
                 <span className="text-gray-300">Design & Development</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">3</div>
+                <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shadow-lg shadow-green-400/30">3</div>
                 <span className="text-gray-300">Testing & Launch</span>
               </div>
               <div className="flex items-center">
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4">4</div>
+                <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 shadow-lg shadow-green-400/30">4</div>
                 <span className="text-gray-300">Support & Maintenance</span>
               </div>
             </div>
