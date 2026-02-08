@@ -349,31 +349,147 @@ export function Services() {
   );
 }
 
-// Portfolio Section
+// Portfolio Section with Interactive Content
 export function Portfolio() {
-  const projects = [
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  // Portfolio items - you can replace these URLs with your actual content
+  const portfolioItems = [
+    // Videos (4 items)
     {
-      title: "E-commerce Platform",
-      category: "Professional Website",
-      description: "Modern e-commerce solution with payment integration",
-      image: IMAGES.portfolio_1,
-      tech: ["React", "Node.js", "MongoDB", "Stripe"]
+      id: 1,
+      type: 'video',
+      category: 'content-creation',
+      title: 'Brand Promotional Video',
+      description: 'Dynamic promotional video with motion graphics',
+      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4', // Replace with your video
+      thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500',
+      tools: ['Adobe Premiere Pro', 'After Effects']
     },
     {
-      title: "Corporate Dashboard",
-      category: "Web Application",
-      description: "Real-time analytics dashboard for business insights",
-      image: IMAGES.portfolio_2,
-      tech: ["Vue.js", "Python", "PostgreSQL", "Chart.js"]
+      id: 2,
+      type: 'video',
+      category: 'content-creation',
+      title: 'Product Animation',
+      description: '3D product showcase with smooth animations',
+      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4', // Replace with your video
+      thumbnail: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500',
+      tools: ['After Effects', 'Cinema 4D']
     },
     {
-      title: "Mobile Fitness App",
-      category: "Mobile Application",
-      description: "Cross-platform fitness tracking application",
-      image: IMAGES.portfolio_3,
-      tech: ["React Native", "Firebase", "Redux", "API Integration"]
+      id: 3,
+      type: 'video',
+      category: 'content-creation',
+      title: 'Social Media Content',
+      description: 'Engaging social media video content',
+      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4', // Replace with your video
+      thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500',
+      tools: ['CapCut', 'Canva']
+    },
+    {
+      id: 4,
+      type: 'video',
+      category: 'content-creation',
+      title: 'Corporate Presentation',
+      description: 'Professional corporate video presentation',
+      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4', // Replace with your video
+      thumbnail: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500',
+      tools: ['Adobe Premiere Pro', 'Canva']
+    },
+    
+    // Images (4 items)
+    {
+      id: 5,
+      type: 'image',
+      category: 'content-creation',
+      title: 'Brand Identity Design',
+      description: 'Complete brand identity and logo design',
+      imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
+      tools: ['Canva', 'Photoshop']
+    },
+    {
+      id: 6,
+      type: 'image',
+      category: 'content-creation',
+      title: 'Social Media Graphics',
+      description: 'Eye-catching social media post designs',
+      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
+      tools: ['Canva', 'Illustrator']
+    },
+    {
+      id: 7,
+      type: 'image',
+      category: 'content-creation',
+      title: 'Marketing Materials',
+      description: 'Professional marketing and promotional materials',
+      imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800',
+      tools: ['Canva', 'InDesign']
+    },
+    {
+      id: 8,
+      type: 'image',
+      category: 'content-creation',
+      title: 'Digital Illustrations',
+      description: 'Custom digital illustrations and artwork',
+      imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800',
+      tools: ['Illustrator', 'Procreate']
+    },
+    
+    // Websites (3 items)
+    {
+      id: 9,
+      type: 'website',
+      category: 'web-development',
+      title: 'E-commerce Platform',
+      description: 'Modern e-commerce solution with payment integration',
+      websiteUrl: 'https://example-ecommerce.com', // Replace with your actual website
+      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
+      tech: ['React', 'Node.js', 'MongoDB', 'Stripe']
+    },
+    {
+      id: 10,
+      type: 'website',
+      category: 'web-development',
+      title: 'Corporate Website',
+      description: 'Professional corporate website with CMS',
+      websiteUrl: 'https://example-corporate.com', // Replace with your actual website
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
+      tech: ['Vue.js', 'Laravel', 'MySQL']
+    },
+    {
+      id: 11,
+      type: 'website',
+      category: 'web-development',
+      title: 'Portfolio Website',
+      description: 'Creative portfolio website with animations',
+      websiteUrl: 'https://example-portfolio.com', // Replace with your actual website
+      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800',
+      tech: ['React', 'Framer Motion', 'Tailwind CSS']
     }
   ];
+
+  const categories = [
+    { id: 'all', label: 'All Projects' },
+    { id: 'web-development', label: 'Websites' },
+    { id: 'content-creation', label: 'Content Creation' }
+  ];
+
+  const filteredItems = activeFilter === 'all' 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === activeFilter);
+
+  const handleItemClick = (item) => {
+    if (item.type === 'website') {
+      window.open(item.websiteUrl, '_blank');
+    } else {
+      setSelectedItem(item);
+    }
+  };
+
+  const closeModal = () => {
+    setSelectedItem(null);
+  };
 
   return (
     <section id="portfolio" className="py-20 bg-black">
@@ -387,32 +503,139 @@ export function Portfolio() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="group cursor-pointer reveal-up">
-              <div className="relative overflow-hidden rounded-xl bg-gray-900">
+        {/* Filter Buttons with Neon Green Shadows */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveFilter(category.id)}
+              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 border ${
+                activeFilter === category.id
+                  ? 'bg-green-600 text-white border-green-400 shadow-lg shadow-green-400/30'
+                  : 'bg-gray-900 text-gray-300 border-gray-700 hover:border-green-400 hover:text-green-400 hover:shadow-md hover:shadow-green-400/20'
+              }`}
+              style={{
+                boxShadow: activeFilter === category.id 
+                  ? '0 0 20px rgba(34, 197, 94, 0.3)' 
+                  : '0 0 10px rgba(34, 197, 94, 0.1)'
+              }}
+            >
+              {category.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Portfolio Grid with Neon Green Shadows */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item) => (
+            <div 
+              key={item.id} 
+              className="group cursor-pointer reveal-up bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-green-400 transition-all duration-300"
+              onClick={() => handleItemClick(item)}
+              style={{
+                boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+              }}
+            >
+              <div className="relative overflow-hidden">
                 <img 
-                  src={project.image} 
-                  alt={project.title}
+                  src={item.type === 'video' ? item.thumbnail : item.imageUrl} 
+                  alt={item.title}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="text-blue-400 text-sm font-medium">{project.category}</span>
-                  <h3 className="text-xl font-bold text-white mt-1">{project.title}</h3>
-                  <p className="text-gray-300 text-sm mt-2">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mt-3">
-                    {project.tech.map((tech, idx) => (
-                      <span key={idx} className="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-xs">
-                        {tech}
+                
+                {/* Type Indicator */}
+                <div className="absolute top-4 left-4">
+                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                    item.type === 'video' ? 'bg-red-600/80 text-white' :
+                    item.type === 'website' ? 'bg-blue-600/80 text-white' :
+                    'bg-purple-600/80 text-white'
+                  }`}>
+                    {item.type === 'video' ? '▶ Video' : 
+                     item.type === 'website' ? '🌐 Website' : 
+                     '🎨 Design'}
+                  </span>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-green-400 text-sm font-medium">
+                        {item.type === 'website' ? 'Click to Visit' : 'Click to View'}
+                      </span>
+                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                <p className="text-gray-300 text-sm mb-4">{item.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {(item.tools || item.tech)?.map((tool, idx) => (
+                    <span key={idx} className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/20">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Modal for Videos and Images */}
+        {selectedItem && (
+          <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4" onClick={closeModal}>
+            <div className="max-w-4xl w-full bg-gray-900 rounded-2xl overflow-hidden border border-green-400/30" 
+                 style={{ boxShadow: '0 0 40px rgba(34, 197, 94, 0.3)' }}
+                 onClick={(e) => e.stopPropagation()}>
+              <div className="p-6">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-2xl font-bold text-white">{selectedItem.title}</h3>
+                  <button 
+                    onClick={closeModal}
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                
+                {selectedItem.type === 'video' ? (
+                  <video 
+                    controls 
+                    className="w-full rounded-lg"
+                    poster={selectedItem.thumbnail}
+                  >
+                    <source src={selectedItem.videoUrl} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <img 
+                    src={selectedItem.imageUrl} 
+                    alt={selectedItem.title}
+                    className="w-full rounded-lg"
+                  />
+                )}
+                
+                <div className="mt-4">
+                  <p className="text-gray-300 mb-4">{selectedItem.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedItem.tools?.map((tool, idx) => (
+                      <span key={idx} className="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm border border-green-400/20">
+                        {tool}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   );
