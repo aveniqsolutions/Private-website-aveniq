@@ -967,13 +967,14 @@ export function ContactForm() {
   );
 }
 
-// Contact Section
+// Contact Section with Neon Green Shadows
 export function Contact() {
   return (
     <section id="contact" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal-up">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.3)' }}>
             Get In Touch
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -985,20 +986,29 @@ export function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="reveal-left">
             <div className="space-y-8">
-              <div className="bg-black border border-gray-800 rounded-2xl p-8">
+              <div 
+                className="bg-black border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
+                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+              >
                 <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div 
+                      className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
+                      style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+                    >
+                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <span className="text-gray-300">contact@aveniq-solutions.com</span>
                   </div>
                   <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mr-4">
-                      <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div 
+                      className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
+                      style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+                    >
+                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
@@ -1007,7 +1017,10 @@ export function Contact() {
                 </div>
               </div>
               
-              <div className="bg-black border border-gray-800 rounded-2xl p-8">
+              <div 
+                className="bg-black border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
+                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+              >
                 <h3 className="text-xl font-bold text-white mb-6">Why Choose Us?</h3>
                 <ul className="space-y-4">
                   {[
@@ -1018,7 +1031,8 @@ export function Contact() {
                     "SEO-optimized solutions"
                   ].map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0" 
+                           style={{ boxShadow: '0 0 8px rgba(34, 197, 94, 0.5)' }}></div>
                       {item}
                     </li>
                   ))}
@@ -1036,10 +1050,11 @@ export function Contact() {
   );
 }
 
-// Footer
+// Footer with Neon Green Shadows
 export function Footer() {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800 py-12">
+    <footer className="bg-gray-900 border-t border-gray-800 py-12"
+            style={{ boxShadow: '0 -5px 20px rgba(34, 197, 94, 0.1)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -1048,30 +1063,33 @@ export function Footer() {
                 src={LOGO_URLS.main} 
                 alt="Aveniq Solutions Logo" 
                 className="h-8 w-auto"
+                style={{ filter: 'drop-shadow(0 0 10px rgba(34, 197, 94, 0.3))' }}
               />
               <span className="text-xl font-bold text-white">Aveniq Solutions</span>
             </div>
             <p className="text-gray-400">
-              Professional web development services to help your business thrive online.
+              Professional web development and content creation services to help your business thrive online.
             </p>
           </div>
           
           <div>
-            <h3 className="text-white font-semibold mb-4">Services</h3>
+            <h3 className="text-white font-semibold mb-4"
+                style={{ textShadow: '0 0 10px rgba(34, 197, 94, 0.3)' }}>Services</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Landing Pages</li>
-              <li>Professional Websites</li>
-              <li>Mobile Applications</li>
-              <li>E-commerce Solutions</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Landing Pages</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Professional Websites</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Mobile Applications</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Video & Content Creation</li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact</h3>
+            <h3 className="text-white font-semibold mb-4"
+                style={{ textShadow: '0 0 10px rgba(34, 197, 94, 0.3)' }}>Contact</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>contact@aveniq-solutions.com</li>
-              <li>Professional Support</li>
-              <li>Quick Response Time</li>
+              <li className="hover:text-green-400 transition-colors duration-200">contact@aveniq-solutions.com</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Professional Support</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Quick Response Time</li>
             </ul>
           </div>
         </div>
