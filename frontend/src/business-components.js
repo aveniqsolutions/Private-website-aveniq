@@ -749,7 +749,7 @@ export function About() {
   );
 }
 
-// Contact Form Component
+// Contact Form Component with Neon Green Shadows
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -846,8 +846,12 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-black rounded-xl p-8">
-      <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
+    <div 
+      className="bg-black rounded-xl p-8 border border-gray-800 hover:border-green-400 transition-all duration-300"
+      style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+    >
+      <h3 className="text-2xl font-bold text-white mb-6"
+          style={{ textShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}>Send us a Message</h3>
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -860,10 +864,13 @@ export function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.name ? 'border-red-500' : 'border-gray-600'
+              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-400 transition-all duration-200 ${
+                errors.name ? 'border-red-500' : 'border-gray-600 hover:border-green-400/50'
               }`}
               placeholder="Your full name"
+              style={{
+                boxShadow: errors.name ? 'none' : '0 0 10px rgba(34, 197, 94, 0.1)'
+              }}
             />
             {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
           </div>
@@ -878,10 +885,13 @@ export function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                errors.email ? 'border-red-500' : 'border-gray-600'
+              className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-400 transition-all duration-200 ${
+                errors.email ? 'border-red-500' : 'border-gray-600 hover:border-green-400/50'
               }`}
               placeholder="your.email@example.com"
+              style={{
+                boxShadow: errors.email ? 'none' : '0 0 10px rgba(34, 197, 94, 0.1)'
+              }}
             />
             {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
           </div>
@@ -897,10 +907,13 @@ export function ContactForm() {
             name="subject"
             value={formData.subject}
             onChange={handleChange}
-            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              errors.subject ? 'border-red-500' : 'border-gray-600'
+            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-400 transition-all duration-200 ${
+              errors.subject ? 'border-red-500' : 'border-gray-600 hover:border-green-400/50'
             }`}
             placeholder="What is this about?"
+            style={{
+              boxShadow: errors.subject ? 'none' : '0 0 10px rgba(34, 197, 94, 0.1)'
+            }}
           />
           {errors.subject && <p className="text-red-400 text-sm mt-1">{errors.subject}</p>}
         </div>
@@ -915,10 +928,13 @@ export function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             rows="5"
-            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none ${
-              errors.message ? 'border-red-500' : 'border-gray-600'
+            className={`w-full px-4 py-3 bg-gray-800 border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-400 resize-none transition-all duration-200 ${
+              errors.message ? 'border-red-500' : 'border-gray-600 hover:border-green-400/50'
             }`}
             placeholder="Tell us about your project..."
+            style={{
+              boxShadow: errors.message ? 'none' : '0 0 10px rgba(34, 197, 94, 0.1)'
+            }}
           ></textarea>
           {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
         </div>
@@ -926,18 +942,24 @@ export function ContactForm() {
         <button 
           type="submit" 
           disabled={isLoading}
-          className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+          className="w-full bg-green-600 hover:bg-green-700 disabled:bg-green-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 hover:transform hover:scale-105 border border-green-500"
+          style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
         >
           {isLoading ? 'Sending...' : 'Send Message'}
         </button>
       </form>
       
       {status && (
-        <div className={`mt-4 p-4 rounded-lg ${
+        <div className={`mt-4 p-4 rounded-lg border ${
           status.includes('Error') 
-            ? 'bg-red-900/50 text-red-300 border border-red-800' 
-            : 'bg-green-900/50 text-green-300 border border-green-800'
-        }`}>
+            ? 'bg-red-900/50 text-red-300 border-red-800' 
+            : 'bg-green-900/50 text-green-300 border-green-800'
+        }`}
+             style={{
+               boxShadow: status.includes('Error') 
+                 ? '0 0 15px rgba(239, 68, 68, 0.3)' 
+                 : '0 0 15px rgba(34, 197, 94, 0.3)'
+             }}>
           {status}
         </div>
       )}
