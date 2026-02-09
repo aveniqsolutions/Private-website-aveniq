@@ -550,7 +550,7 @@ export function Portfolio() {
 
         {/* Portfolio Grid with Neon Green Shadows */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.length > 0 ? (
+          {filteredItems && filteredItems.length > 0 ? (
             filteredItems.map((item) => (
               <div 
                 key={item.id} 
@@ -610,7 +610,17 @@ export function Portfolio() {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-gray-400 text-lg">No projects found for this category.</p>
+              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
+                <svg className="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                <p className="text-gray-400 text-lg mb-2">No projects found</p>
+                <p className="text-gray-500 text-sm">
+                  {activeFilter === 'web-development' ? 'Website projects will be displayed here once added.' :
+                   activeFilter === 'content-creation' ? 'Content creation projects will be displayed here once added.' :
+                   'All projects will be displayed here once added.'}
+                </p>
+              </div>
             </div>
           )}
         </div>
