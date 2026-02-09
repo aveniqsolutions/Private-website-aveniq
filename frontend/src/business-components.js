@@ -470,9 +470,18 @@ export function Portfolio() {
     { id: 'content-creation', label: 'Content Creation' }
   ];
 
-  const filteredItems = activeFilter === 'all' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === activeFilter);
+  // Fixed filtering logic with proper state management
+  const filteredItems = useMemo(() => {
+    if (activeFilter === 'all') {
+      return portfolioItems;
+    }
+    return portfolioItems.filter(item => item.category === activeFilter);
+  }, [activeFilter]);
+
+  const handleFilterChange = (filterId) => {
+    setActiveFilter(filterId);
+    setSelectedItem(null); // Close any open modal when changing filters
+  };
 
   const handleItemClick = (item) => {
     if (item.type === 'website') {
@@ -503,7 +512,7 @@ export function Portfolio() {
           {categories.map((category) => (
             <button
               key={category.id}
-              onClick={() => setActiveFilter(category.id)}
+              onClick={() => handleFilterChange(category.id)}
               className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 border ${
                 activeFilter === category.id
                   ? 'bg-green-600 text-white border-green-400 shadow-lg shadow-green-400/30'
@@ -522,63 +531,69 @@ export function Portfolio() {
 
         {/* Portfolio Grid with Neon Green Shadows */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems.map((item) => (
-            <div 
-              key={item.id} 
-              className="group cursor-pointer reveal-up bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-green-400 transition-all duration-300"
-              onClick={() => handleItemClick(item)}
-              style={{
-                boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
-              }}
-            >
-              <div className="relative overflow-hidden">
-                <img 
-                  src={item.type === 'video' ? item.thumbnail : item.imageUrl} 
-                  alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                
-                {/* Type Indicator */}
-                <div className="absolute top-4 left-4">
-                  <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    item.type === 'video' ? 'bg-red-600/80 text-white' :
-                    item.type === 'website' ? 'bg-blue-600/80 text-white' :
-                    'bg-purple-600/80 text-white'
-                  }`}>
-                    {item.type === 'video' ? '▶ Video' : 
-                     item.type === 'website' ? '🌐 Website' : 
-                     '🎨 Design'}
-                  </span>
-                </div>
+          {filteredItems.length > 0 ? (
+            filteredItems.map((item) => (
+              <div 
+                key={item.id} 
+                className="group cursor-pointer reveal-up bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-green-400 transition-all duration-300"
+                onClick={() => handleItemClick(item)}
+                style={{
+                  boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+                }}
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={item.type === 'video' ? item.thumbnail : item.imageUrl} 
+                    alt={item.title}
+                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  
+                  {/* Type Indicator */}
+                  <div className="absolute top-4 left-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      item.type === 'video' ? 'bg-red-600/80 text-white' :
+                      item.type === 'website' ? 'bg-blue-600/80 text-white' :
+                      'bg-purple-600/80 text-white'
+                    }`}>
+                      {item.type === 'video' ? '▶ Video' : 
+                       item.type === 'website' ? '🌐 Website' : 
+                       '🎨 Design'}
+                    </span>
+                  </div>
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-green-400 text-sm font-medium">
-                        {item.type === 'website' ? 'Click to Visit' : 'Click to View'}
-                      </span>
-                      <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                  {/* Hover Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-green-400 text-sm font-medium">
+                          {item.type === 'website' ? 'Click to Visit' : 'Click to View'}
+                        </span>
+                        <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-4">{item.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {(item.tools || item.tech)?.map((tool, idx) => (
-                    <span key={idx} className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/20">
-                      {tool}
-                    </span>
-                  ))}
+                
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{item.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {(item.tools || item.tech)?.map((tool, idx) => (
+                      <span key={idx} className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/20">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+            ))
+          ) : (
+            <div className="col-span-full text-center py-12">
+              <p className="text-gray-400 text-lg">No projects found for this category.</p>
             </div>
-          ))}
+          )}
         </div>
 
         {/* Modal for Videos and Images */}
