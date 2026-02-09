@@ -478,6 +478,25 @@ export function Portfolio() {
     return portfolioItems.filter(item => item.category === activeFilter);
   }, [activeFilter]);
 
+  // Update document title based on active filter
+  useEffect(() => {
+    const baseTitle = "Aveniq Solutions - Professional Web Development & Content Creation";
+    let newTitle = baseTitle;
+    
+    if (activeFilter === 'web-development') {
+      newTitle = "Websites Portfolio - Aveniq Solutions";
+    } else if (activeFilter === 'content-creation') {
+      newTitle = "Content Creation Portfolio - Aveniq Solutions";
+    }
+    
+    document.title = newTitle;
+    
+    // Cleanup: reset title when component unmounts
+    return () => {
+      document.title = baseTitle;
+    };
+  }, [activeFilter]);
+
   const handleFilterChange = (filterId) => {
     setActiveFilter(filterId);
     setSelectedItem(null); // Close any open modal when changing filters
