@@ -344,18 +344,15 @@ export function Services() {
   );
 }
 
-// Portfolio Section with Interactive Content
+// Portfolio Section with Fixed Sections (No Filters)
 export function Portfolio() {
-  const [activeFilter, setActiveFilter] = useState('all');
   const [selectedItem, setSelectedItem] = useState(null);
 
-  // Portfolio items - you can replace these URLs with your actual content
-  const portfolioItems = [
-    // Videos (4 items)
+  // Content Creation Projects (2 videos + 2 images)
+  const contentCreationProjects = [
     {
       id: 1,
       type: 'video',
-      category: 'content-creation',
       title: 'Brand Promotional Video',
       description: 'Dynamic promotional video with motion graphics',
       videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4', // Replace with your video
@@ -365,7 +362,6 @@ export function Portfolio() {
     {
       id: 2,
       type: 'video',
-      category: 'content-creation',
       title: 'Product Animation',
       description: '3D product showcase with smooth animations',
       videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4', // Replace with your video
@@ -374,68 +370,27 @@ export function Portfolio() {
     },
     {
       id: 3,
-      type: 'video',
-      category: 'content-creation',
-      title: 'Social Media Content',
-      description: 'Engaging social media video content',
-      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4', // Replace with your video
-      thumbnail: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=500',
-      tools: ['CapCut', 'Canva']
-    },
-    {
-      id: 4,
-      type: 'video',
-      category: 'content-creation',
-      title: 'Corporate Presentation',
-      description: 'Professional corporate video presentation',
-      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4', // Replace with your video
-      thumbnail: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500',
-      tools: ['Adobe Premiere Pro', 'Canva']
-    },
-    
-    // Images (4 items)
-    {
-      id: 5,
       type: 'image',
-      category: 'content-creation',
       title: 'Brand Identity Design',
       description: 'Complete brand identity and logo design',
       imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
       tools: ['Canva', 'Photoshop']
     },
     {
-      id: 6,
+      id: 4,
       type: 'image',
-      category: 'content-creation',
       title: 'Social Media Graphics',
       description: 'Eye-catching social media post designs',
       imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
       tools: ['Canva', 'Illustrator']
-    },
+    }
+  ];
+
+  // Website Projects (3 websites)
+  const websiteProjects = [
     {
-      id: 7,
-      type: 'image',
-      category: 'content-creation',
-      title: 'Marketing Materials',
-      description: 'Professional marketing and promotional materials',
-      imageUrl: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=800',
-      tools: ['Canva', 'InDesign']
-    },
-    {
-      id: 8,
-      type: 'image',
-      category: 'content-creation',
-      title: 'Digital Illustrations',
-      description: 'Custom digital illustrations and artwork',
-      imageUrl: 'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800',
-      tools: ['Illustrator', 'Procreate']
-    },
-    
-    // Websites (3 items)
-    {
-      id: 9,
+      id: 5,
       type: 'website',
-      category: 'web-development',
       title: 'E-commerce Platform',
       description: 'Modern e-commerce solution with payment integration',
       websiteUrl: 'https://example-ecommerce.com', // Replace with your actual website
@@ -443,9 +398,8 @@ export function Portfolio() {
       tech: ['React', 'Node.js', 'MongoDB', 'Stripe']
     },
     {
-      id: 10,
+      id: 6,
       type: 'website',
-      category: 'web-development',
       title: 'Corporate Website',
       description: 'Professional corporate website with CMS',
       websiteUrl: 'https://example-corporate.com', // Replace with your actual website
@@ -453,9 +407,8 @@ export function Portfolio() {
       tech: ['Vue.js', 'Laravel', 'MySQL']
     },
     {
-      id: 11,
+      id: 7,
       type: 'website',
-      category: 'web-development',
       title: 'Portfolio Website',
       description: 'Creative portfolio website with animations',
       websiteUrl: 'https://example-portfolio.com', // Replace with your actual website
@@ -464,47 +417,42 @@ export function Portfolio() {
     }
   ];
 
-  const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web-development', label: 'Websites' },
-    { id: 'content-creation', label: 'Content Creation' }
+  // AI Chatbot Projects (3 chatbots)
+  const aiChatbotProjects = [
+    {
+      id: 8,
+      type: 'chatbot',
+      title: 'Customer Support Bot',
+      description: 'AI-powered customer support chatbot with natural language processing',
+      demoUrl: 'https://example-chatbot-demo.com', // Replace with your actual demo
+      imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
+      tech: ['OpenAI GPT', 'Python', 'FastAPI', 'React']
+    },
+    {
+      id: 9,
+      type: 'chatbot',
+      title: 'Sales Assistant Bot',
+      description: 'Intelligent sales assistant to help customers find products',
+      demoUrl: 'https://example-sales-bot.com', // Replace with your actual demo
+      imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800',
+      tech: ['Claude AI', 'Node.js', 'MongoDB', 'Socket.io']
+    },
+    {
+      id: 10,
+      type: 'chatbot',
+      title: 'Educational Tutor Bot',
+      description: 'AI tutor bot for personalized learning experiences',
+      demoUrl: 'https://example-tutor-bot.com', // Replace with your actual demo
+      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800',
+      tech: ['Gemini AI', 'Python', 'Django', 'WebSocket']
+    }
   ];
-
-  // Fixed filtering logic with proper state management
-  const filteredItems = useMemo(() => {
-    if (activeFilter === 'all') {
-      return portfolioItems;
-    }
-    return portfolioItems.filter(item => item.category === activeFilter);
-  }, [activeFilter]);
-
-  // Update document title based on active filter
-  useEffect(() => {
-    const baseTitle = "Aveniq Solutions - Professional Web Development & Content Creation";
-    let newTitle = baseTitle;
-    
-    if (activeFilter === 'web-development') {
-      newTitle = "Websites Portfolio - Aveniq Solutions";
-    } else if (activeFilter === 'content-creation') {
-      newTitle = "Content Creation Portfolio - Aveniq Solutions";
-    }
-    
-    document.title = newTitle;
-    
-    // Cleanup: reset title when component unmounts
-    return () => {
-      document.title = baseTitle;
-    };
-  }, [activeFilter]);
-
-  const handleFilterChange = (filterId) => {
-    setActiveFilter(filterId);
-    setSelectedItem(null); // Close any open modal when changing filters
-  };
 
   const handleItemClick = (item) => {
     if (item.type === 'website') {
       window.open(item.websiteUrl, '_blank');
+    } else if (item.type === 'chatbot') {
+      window.open(item.demoUrl, '_blank');
     } else {
       setSelectedItem(item);
     }
@@ -514,116 +462,99 @@ export function Portfolio() {
     setSelectedItem(null);
   };
 
+  const renderProjectGrid = (projects, sectionTitle) => (
+    <div className="mb-20">
+      <h3 className="text-2xl font-bold text-white mb-8 text-center"
+          style={{ textShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}>
+        {sectionTitle}
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((item) => (
+          <div 
+            key={item.id} 
+            className="group cursor-pointer reveal-up bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-green-400 transition-all duration-300"
+            onClick={() => handleItemClick(item)}
+            style={{
+              boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+            }}
+          >
+            <div className="relative overflow-hidden">
+              <img 
+                src={item.type === 'video' ? item.thumbnail : item.imageUrl} 
+                alt={item.title}
+                className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+              
+              {/* Type Indicator */}
+              <div className="absolute top-4 left-4">
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                  item.type === 'video' ? 'bg-red-600/80 text-white' :
+                  item.type === 'website' ? 'bg-blue-600/80 text-white' :
+                  item.type === 'chatbot' ? 'bg-green-600/80 text-white' :
+                  'bg-purple-600/80 text-white'
+                }`}>
+                  {item.type === 'video' ? '▶ Video' : 
+                   item.type === 'website' ? '🌐 Website' : 
+                   item.type === 'chatbot' ? '🤖 AI Bot' :
+                   '🎨 Design'}
+                </span>
+              </div>
+
+              {/* Hover Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-green-400 text-sm font-medium">
+                      {item.type === 'website' ? 'Click to Visit' : 
+                       item.type === 'chatbot' ? 'Click to Demo' : 
+                       'Click to View'}
+                    </span>
+                    <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-6">
+              <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
+              <p className="text-gray-300 text-sm mb-4">{item.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {(item.tools || item.tech)?.map((tool, idx) => (
+                  <span key={idx} className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/20">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <section id="portfolio" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 reveal-up">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4"
+              style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.3)' }}>
             Our Portfolio
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Showcasing our latest projects and successful digital transformations
+            Showcasing our latest projects across content creation, web development, and AI solutions
           </p>
         </div>
 
-        {/* Filter Buttons with Neon Green Shadows */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => handleFilterChange(category.id)}
-              className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 border ${
-                activeFilter === category.id
-                  ? 'bg-green-600 text-white border-green-400 shadow-lg shadow-green-400/30'
-                  : 'bg-gray-900 text-gray-300 border-gray-700 hover:border-green-400 hover:text-green-400 hover:shadow-md hover:shadow-green-400/20'
-              }`}
-              style={{
-                boxShadow: activeFilter === category.id 
-                  ? '0 0 20px rgba(34, 197, 94, 0.3)' 
-                  : '0 0 10px rgba(34, 197, 94, 0.1)'
-              }}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
+        {/* Content Creation Section */}
+        {renderProjectGrid(contentCreationProjects, "Content Creation")}
 
-        {/* Portfolio Grid with Neon Green Shadows */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredItems && filteredItems.length > 0 ? (
-            filteredItems.map((item) => (
-              <div 
-                key={item.id} 
-                className="group cursor-pointer reveal-up bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden hover:border-green-400 transition-all duration-300"
-                onClick={() => handleItemClick(item)}
-                style={{
-                  boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
-                }}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={item.type === 'video' ? item.thumbnail : item.imageUrl} 
-                    alt={item.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  
-                  {/* Type Indicator */}
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      item.type === 'video' ? 'bg-red-600/80 text-white' :
-                      item.type === 'website' ? 'bg-blue-600/80 text-white' :
-                      'bg-purple-600/80 text-white'
-                    }`}>
-                      {item.type === 'video' ? '▶ Video' : 
-                       item.type === 'website' ? '🌐 Website' : 
-                       '🎨 Design'}
-                    </span>
-                  </div>
+        {/* Websites Section */}
+        {renderProjectGrid(websiteProjects, "Websites")}
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-green-400 text-sm font-medium">
-                          {item.type === 'website' ? 'Click to Visit' : 'Click to View'}
-                        </span>
-                        <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{item.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {(item.tools || item.tech)?.map((tool, idx) => (
-                      <span key={idx} className="bg-green-600/20 text-green-400 px-2 py-1 rounded text-xs border border-green-400/20">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))
-          ) : (
-            <div className="col-span-full text-center py-12">
-              <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8">
-                <svg className="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                <p className="text-gray-400 text-lg mb-2">No projects found</p>
-                <p className="text-gray-500 text-sm">
-                  {activeFilter === 'web-development' ? 'Website projects will be displayed here once added.' :
-                   activeFilter === 'content-creation' ? 'Content creation projects will be displayed here once added.' :
-                   'All projects will be displayed here once added.'}
-                </p>
-              </div>
-            </div>
-          )}
-        </div>
+        {/* AI Chatbots Section */}
+        {renderProjectGrid(aiChatbotProjects, "AI Chatbots")}
 
         {/* Modal for Videos and Images */}
         {selectedItem && (
