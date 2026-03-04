@@ -191,21 +191,21 @@ export function Services() {
   const services = [
     {
       title: "Landing Pages",
-      description: "Fast, responsive landing pages to capture leads and drive conversions",
-      features: ["Mobile Responsive", "Fast Loading", "SEO Optimized", "Lead Capture Forms"],
+      description: "Fast, responsive landing pages to capture leads and drive conversions optimised for SEO that can accelerate your growth",
+      features: ["Mobile Responsive", "Fast Loading", "SEO Optimised", "Lead Capture Forms", ""],
       highlight: "Perfect for marketing campaigns and lead generation",
       icon: "M13 10V3L4 14h7v7l9-11h-7z"
     },
     {
       title: "Professional Websites",
-      description: "Custom websites tailored to your business needs",
+      description: "Custom websites tailored to your business needs to support long term growth",
       features: ["Custom Design", "CMS Integration", "E-commerce Ready", "Analytics Setup"],
       highlight: "Complete business solutions with modern functionality",
       icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
     },
     {
       title: "Mobile Apps",
-      description: "Simple functional mobile apps to enhance user engagement",
+      description: "Simple functional mobile apps to enhance user engagement that turn users into loyal customers",
       features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"],
       highlight: "Extend your reach with mobile applications",
       icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
