@@ -204,7 +204,7 @@ export function Services() {
       icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
     },
     {
-      title: "Mobile Apps",
+      title: "Mobile Applications",
       description: "Simple and Advanced functional mobile apps to enhance user engagement that turn users into loyal customers",
       features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"],
       highlight: "Extend your reach with mobile applications",
@@ -212,7 +212,7 @@ export function Services() {
     },
     {
       title: "Video & Content Creation",
-      description: "Professional video editing and animation for engaging content",
+      description: "Professional video editing and animation for engaging social media content",
       features: ["Adobe Premiere Pro", "After Effects", "CapCut", "Canva Design", "2D & 3D Animation"],
       highlight: "Bring your brand to life with stunning visual content",
       icon: "M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
@@ -375,14 +375,6 @@ export function Portfolio() {
       description: 'Complete brand identity and logo design',
       imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
       tools: ['Canva', 'Photoshop']
-    },
-    {
-      id: 4,
-      type: 'image',
-      title: 'Social Media Graphics',
-      description: 'Eye-catching social media post designs',
-      imageUrl: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800',
-      tools: ['Canva', 'Illustrator']
     }
   ];
 
