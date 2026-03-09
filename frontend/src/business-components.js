@@ -700,7 +700,7 @@ export function About() {
   );
 }
 
-// Contact Form Component with Neon Green Shadows
+// Contact Form Component with Formspree Integration
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
@@ -711,6 +711,8 @@ export function ContactForm() {
   const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzdjdzkl';
   
   const validateForm = () => {
     const newErrors = {};
@@ -766,30 +768,32 @@ export function ContactForm() {
     setStatus('');
     
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL;
-      if (!backendUrl) {
-        throw new Error('Backend URL not configured. Please contact support.');
-      }
       
-      const response = await fetch(`${backendUrl}/api/contact`, {
+     const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+       body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Formspree will use this as reply-to
+          _subject: `New Contact from Aveniq Solutions: ${formData.subject}` // Custom subject line
+        })
       });
       
-      const data = await response.json();
-      
-      if (response.ok && data.success) {
-        setStatus(data.message || 'Message sent successfully! We will contact you soon.');
+      if (response.ok) {
+        setStatus('Message sent successfully! We will contact you soon.');
         setFormData({ name: '', email: '', subject: '', message: '' });
         setErrors({});
       } else {
-        setStatus('Error: ' + (data.detail || data.message || 'Failed to send message'));
+        const errorData = await response.json();
+        setStatus('Error: ' + (errorData.error || 'Failed to send message. Please try again.'));
       }
     } catch (error) {
-      setStatus('Error: Unable to send message. Please try again later.');
+      setStatus('Error: Unable to send message. Please check your internet connection and try again.');
       console.error('Contact form error:', error);
     } finally {
       setIsLoading(false);
@@ -803,6 +807,7 @@ export function ContactForm() {
     >
       <h3 className="text-2xl font-bold text-white mb-6"
           style={{ textShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}>Send us a Message</h3>
+            
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
