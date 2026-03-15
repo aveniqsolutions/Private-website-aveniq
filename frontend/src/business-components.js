@@ -939,42 +939,65 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="reveal-left">
-            <div className="space-y-8">
-              <div 
-                className="bg-black border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
-                style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
-              >
-                <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-center">
-                    <div 
-                      className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
-                      style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
-                    >
-                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                  <a href="mailto:contact@aveniq-solutions.com" className="text-gray-300 hover:text-green-400 transition-colors"
-                      >
-                    contact@aveniq-solutions.com
-                  </a>
-                  </div>
-                  <div className="flex items-center">
-                    <div 
-                      className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
-                      style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
-                    >
-                      <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <span className="text-gray-300">Response within 24 hours</span>
-                  </div>
-                </div>
-              </div>
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+  <div className="reveal-left">
+    <div className="space-y-8">
+      <div
+        className="bg-black border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
+        style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
+      >
+        <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+        <div className="space-y-6">
+
+          {/* Email */}
+          <div className="flex items-center">
+            <div
+              className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
+              style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+            >
+              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <a href="mailto:contact@aveniq-solutions.com" className="text-gray-300 hover:text-green-400 transition-colors">
+              contact@aveniq-solutions.com
+            </a>
+          </div>
+
+          {/* Phone */}
+          <div className="flex items-center">
+            <div
+              className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
+              style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+            >
+              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3l2 5-2 2a16 16 0 006 6l2-2 5 2v3a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+            </div>
+            <a href="tel:+1234567890" className="text-gray-300 hover:text-green-400 transition-colors">
+              +1 (234) 567-890
+            </a>
+          </div>
+
+          {/* Response Time */}
+          <div className="flex items-center">
+            <div
+              className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center mr-4 border border-green-400/20"
+              style={{ boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)' }}
+            >
+              <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <span className="text-gray-300">Response within 24 hours</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
               
               <div 
                 className="bg-black border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300"
@@ -1032,11 +1055,6 @@ export function Footer() {
           </div>
                 <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center border border-green-400/20"
      style={{ boxShadow: '0 0 15px rgba(34,197,94,0.3)' }}>
-     
-  <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3l2 5-2 2a16 16 0 006 6l2-2 5 2v3a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-  </svg>
-
 </div>
 
 
