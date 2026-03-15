@@ -204,11 +204,11 @@ export function Services() {
       icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
     },
     {
-      title: "Mobile Applications",
-      description: "Simple and Advanced functional mobile apps to enhance user engagement that turn users into loyal customers",
-      features: ["Cross-Platform", "User-Friendly", "Push Notifications", "Offline Support"],
-      highlight: "Extend your reach with mobile applications",
-      icon: "M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+      title: "AI Agents",
+      description: "An intelligent AI agent that automates tasks, answers questions, and helps users make data-driven decisions in real-time.",
+      features: ["Natural Language Understanding", "24/7 Availability", "Customizable Workflows", "Integrates with APIs & Databases"],
+      highlight: "Boost productivity and decision-making with AI-powered assistance",
+      icon: "M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"
     },
     {
       title: "Video & Content Creation",
@@ -410,41 +410,41 @@ export function Portfolio() {
   ];
 
   // AI Chatbot Projects (3 chatbots)
-  const aiChatbotProjects = [
-    {
-      id: 8,
-      type: 'chatbot',
-      title: 'Customer Support Bot',
-      description: 'AI-powered customer support chatbot with natural language processing',
-      demoUrl: 'https://example-chatbot-demo.com', // Replace with your actual demo
-      imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
-      tech: ['OpenAI GPT', 'Python', 'FastAPI', 'React']
-    },
-    {
-      id: 9,
-      type: 'chatbot',
-      title: 'Sales Assistant Bot',
-      description: 'Intelligent sales assistant to help customers find products',
-      demoUrl: 'https://example-sales-bot.com', // Replace with your actual demo
-      imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800',
-      tech: ['Claude AI', 'Node.js', 'MongoDB', 'Socket.io']
-    },
-    {
-      id: 10,
-      type: 'chatbot',
-      title: 'Educational Tutor Bot',
-      description: 'AI tutor bot for personalized learning experiences',
-      demoUrl: 'https://example-tutor-bot.com', // Replace with your actual demo
-      imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800',
-      tech: ['Gemini AI', 'Python', 'Django', 'WebSocket']
-    }
-  ];
+  // const aiChatbotProjects = [
+  //   {
+  //     id: 8,
+  //     type: 'chatbot',
+  //     title: 'Customer Support Bot',
+  //     description: 'AI-powered customer support chatbot with natural language processing',
+  //     demoUrl: 'https://example-chatbot-demo.com', // Replace with your actual demo
+  //     imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800',
+  //     tech: ['OpenAI GPT', 'Python', 'FastAPI', 'React']
+  //   },
+  //   {
+  //     id: 9,
+  //     type: 'chatbot',
+  //     title: 'Sales Assistant Bot',
+  //     description: 'Intelligent sales assistant to help customers find products',
+  //     demoUrl: 'https://example-sales-bot.com', // Replace with your actual demo
+  //     imageUrl: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800',
+  //     tech: ['Claude AI', 'Node.js', 'MongoDB', 'Socket.io']
+  //   },
+  //   {
+  //     id: 10,
+  //     type: 'chatbot',
+  //     title: 'Educational Tutor Bot',
+  //     description: 'AI tutor bot for personalized learning experiences',
+  //     demoUrl: 'https://example-tutor-bot.com', // Replace with your actual demo
+  //     imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800',
+  //     tech: ['Gemini AI', 'Python', 'Django', 'WebSocket']
+  //   }
+  // ];
 
   const handleItemClick = (item) => {
     if (item.type === 'website') {
       window.open(item.websiteUrl, '_blank');
-    } else if (item.type === 'chatbot') {
-      window.open(item.demoUrl, '_blank');
+    // } else if (item.type === 'chatbot') {
+    //   window.open(item.demoUrl, '_blank');
     } else {
       setSelectedItem(item);
     }
@@ -535,7 +535,7 @@ export function Portfolio() {
             Our Portfolio
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Showcasing our latest projects across content creation, web development, and AI solutions
+            Showcasing our latest projects across content creation, web development and AI solutions
           </p>
         </div>
 
@@ -616,7 +616,7 @@ export function About() {
             </h2>
             <p className="text-lg text-gray-300 mb-6">
               We specialize in helping businesses, startups, and individuals establish 
-              a strong online presence with professional, modern, and affordable digital solutions.
+              a strong online presence with professional, modern and affordable digital solutions.
             </p>
             <p className="text-gray-300 mb-6">
               Our mission is to make high-quality web development and content creation accessible to everyone. 
@@ -989,8 +989,8 @@ export function Contact() {
                       />
                     </svg>
                   </div>
-                  <a href="tel:+1234567890" className="text-gray-300 hover:text-green-400 transition-colors">
-                    +1 (234) 567-890
+                  <a href="tel:+32465973568" className="text-gray-300 hover:text-green-400 transition-colors">
+                    +32 (465) 973-568
                   </a>
                 </div>
 
@@ -1026,7 +1026,7 @@ export function Contact() {
                   'Fast turnaround times',
                   'Modern, responsive designs',
                   'Ongoing support and maintenance',
-                  'SEO-optimized solutions',
+                  'SEO-optimised solutions',
                 ].map((item, index) => (
                   <li key={index} className="flex items-center text-gray-300">
                     <div
@@ -1071,10 +1071,6 @@ export function Footer() {
               Professional web development and content creation services to help your business thrive online.
             </p>
           </div>
-                <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center border border-green-400/20"
-     style={{ boxShadow: '0 0 15px rgba(34,197,94,0.3)' }}>
-</div>
-
 
           
           <div>
@@ -1083,7 +1079,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li className="hover:text-green-400 transition-colors duration-200">Landing Pages</li>
               <li className="hover:text-green-400 transition-colors duration-200">Professional Websites</li>
-              <li className="hover:text-green-400 transition-colors duration-200">Mobile Applications</li>
+              <li className="hover:text-green-400 transition-colors duration-200">AI Agents</li>
               <li className="hover:text-green-400 transition-colors duration-200">Video & Content Creation</li>
             </ul>
           </div>
