@@ -1023,7 +1023,6 @@ export function Contact() {
               <ul className="space-y-4">
                 {[
                   'Affordable pricing for quality work',
-                  'Fast turnaround times',
                   'Modern, responsive designs',
                   'Ongoing support and maintenance',
                   'SEO-optimised solutions',
