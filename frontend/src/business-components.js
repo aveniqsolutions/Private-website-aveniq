@@ -353,28 +353,20 @@ export function Portfolio() {
     {
       id: 1,
       type: 'video',
-      title: 'Brand Promotional Video',
+      title: 'Professional Reels & Videos',
       description: 'Dynamic promotional video with motion graphics',
-      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4', // Replace with your video
-      thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500',
-      tools: ['Adobe Premiere Pro', 'After Effects']
+      videoUrl: 'https://www.behance.net/gallery/244551225/Video-Editing-3D-and-2D-MotionAnimation',
+      thumbnail: '/vidthumb.png',
+      tools: ['Adobe Premiere Pro', 'After Effects', 'CapCut Pro']
     },
     {
       id: 2,
-      type: 'video',
-      title: 'Product Animation',
-      description: '3D product showcase with smooth animations',
-      videoUrl: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4', // Replace with your video
-      thumbnail: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500',
-      tools: ['After Effects', 'Cinema 4D']
-    },
-    {
-      id: 3,
       type: 'image',
-      title: 'Brand Identity Design',
-      description: 'Complete brand identity and logo design',
-      imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
-      tools: ['Canva', 'Photoshop']
+      title: 'Social Media Content',
+      description: '3D product showcase with smooth animations',
+      videoUrl: 'https://www.behance.net/gallery/244554625/Social-Media-Content-Creation',
+      thumbnail: '/imgthumb.png',
+      tools: ['Photoshop', 'Canva', 'Lightroom']
     }
   ];
 
@@ -401,10 +393,10 @@ export function Portfolio() {
     {
       id: 7,
       type: 'website',
-      title: 'Portfolio Website',
+      title: 'Artistic Portofolio Website',
       description: 'Creative portfolio website with animations',
-      websiteUrl: 'https://example-portfolio.com', // Replace with your actual website
-      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800',
+      websiteUrl: 'https://hum-aur-zindagi.vercel.app/',
+      imageUrl: '/webthumb.png',
       tech: ['React', 'Framer Motion', 'Tailwind CSS']
     }
   ];
