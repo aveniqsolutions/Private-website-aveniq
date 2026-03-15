@@ -957,7 +957,10 @@ export function Contact() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    <span className="text-gray-300">contact@aveniq-solutions.com</span>
+                  <a href="mailto:contact@aveniq-solutions.com" className="text-gray-300 hover:text-green-400 transition-colors"
+                      >
+                    contact@aveniq-solutions.com
+                  </a>
                   </div>
                   <div className="flex items-center">
                     <div 
