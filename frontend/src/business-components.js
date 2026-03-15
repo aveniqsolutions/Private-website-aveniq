@@ -615,13 +615,13 @@ export function About() {
               About Aveniq Solutions
             </h2>
             <p className="text-lg text-gray-300 mb-6">
-              We specialize in helping businesses, startups, and individuals establish 
-              a strong online presence with professional, modern and affordable digital solutions.
+              We specialise in helping businesses, startups and individuals establish 
+              a strong online presence with professional, modern & affordable digital solutions.
             </p>
             <p className="text-gray-300 mb-6">
-              Our mission is to make high-quality web development and content creation accessible to everyone. 
+              Our mission is to make high-quality web development & content creation accessible to everyone. 
               We believe that every business deserves a professional digital presence that 
-              communicates trust, innovation, and professionalism.
+              communicates trust & professionalism.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div 
