@@ -352,7 +352,7 @@ export function Portfolio() {
   const contentCreationProjects = [
     {
       id: 1,
-      type: 'video',
+      type: 'website',
       title: 'Professional Reels & Videos',
       description: 'Dynamic promotional video with motion graphics',
       websiteUrl: 'https://www.behance.net/gallery/244551225/Video-Editing-3D-and-2D-MotionAnimation',
@@ -361,7 +361,7 @@ export function Portfolio() {
     },
     {
       id: 2,
-      type: 'image',
+      type: 'website',
       title: 'Social Media Content',
       description: '3D product showcase with smooth animations',
       websiteUrl: 'https://www.behance.net/gallery/244554625/Social-Media-Content-Creation',
