@@ -546,7 +546,7 @@ export function Portfolio() {
         {renderProjectGrid(websiteProjects, "Websites")}
 
         {/* AI Chatbots Section */}
-        // {renderProjectGrid(aiChatbotProjects, "AI Chatbots")}
+       ///do the same for ai too 
 
         {/* Modal for Videos and Images */}
         {selectedItem && (
