@@ -352,20 +352,20 @@ export function Portfolio() {
   const contentCreationProjects = [
     {
       id: 1,
-      type: 'website',
+      type: 'video',
       title: 'Professional Reels & Videos',
       description: 'Dynamic promotional video with motion graphics',
-      videoUrl: 'https://www.behance.net/gallery/244551225/Video-Editing-3D-and-2D-MotionAnimation',
-      thumbnail: '/vidthumb.png',
+      websiteUrl: 'https://www.behance.net/gallery/244551225/Video-Editing-3D-and-2D-MotionAnimation',
+      imageUrl: '/vidthumb.png',
       tools: ['Adobe Premiere Pro', 'After Effects', 'CapCut Pro']
     },
     {
       id: 2,
-      type: 'website',
+      type: 'image',
       title: 'Social Media Content',
       description: '3D product showcase with smooth animations',
-      videoUrl: 'https://www.behance.net/gallery/244554625/Social-Media-Content-Creation',
-      thumbnail: '/imgthumb.png',
+      websiteUrl: 'https://www.behance.net/gallery/244554625/Social-Media-Content-Creation',
+      imageUrl: '/imgthumb.png',
       tools: ['Photoshop', 'Canva', 'Lightroom']
     }
   ];
