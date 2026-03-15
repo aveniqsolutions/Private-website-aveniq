@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 
 // Logo URLs from user assets
 export const LOGO_URLS = {
-  main: "/aveniq.png",
+  main: "/aveniq1.png",
   alt: "https://customer-assets.emergentagent.com/job_c5c5fb7d-d1cc-44e0-a158-a80c55348ee2/artifacts/9ax4sj8a_Blue%20%26%20Black%20Technology%20Logo.png"
 };
 
