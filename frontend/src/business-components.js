@@ -468,21 +468,7 @@ export function Portfolio() {
                 alt={item.title}
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
               />
-              
-              {/* Type Indicator */}
-              // <div className="absolute top-4 left-4">
-              //   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-              //     item.type === 'video' ? 'bg-red-600/80 text-white' :
-              //     item.type === 'website' ? 'bg-blue-600/80 text-white' :
-              //     item.type === 'chatbot' ? 'bg-green-600/80 text-white' :
-              //     'bg-purple-600/80 text-white'
-              //   }`}>
-              //     {item.type === 'video' ? '▶ Video' : 
-              //      item.type === 'website' ? '🌐 Website' : 
-              //      item.type === 'chatbot' ? '🤖 AI Bot' :
-              //      '🎨 Design'}
-              //   </span>
-              // </div>
+         
 
               {/* Hover Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
