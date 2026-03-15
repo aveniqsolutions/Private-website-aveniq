@@ -162,7 +162,7 @@ export function Hero() {
             <span className="block text-green-400" style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.5)' }}>Online Today</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Professional websites, fast landing pages, functional mobile apps, and stunning video content 
+            Professional websites, fast landing pages, functional mobile apps and stunning video content 
             that help businesses establish a strong digital presence they can afford.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -205,10 +205,10 @@ export function Services() {
     },
     {
       title: "AI Agents",
-      description: "An intelligent AI agent that automates tasks, answers questions, and helps users make data-driven decisions in real-time.",
-      features: ["Natural Language Understanding", "24/7 Availability", "Customizable Workflows", "Integrates with APIs & Databases"],
+      description: "An intelligent agent that automates tasks, answers questions & helps users make data-driven decisions in real-time.",
+      features: ["Human Like Model", "24/7 Availability", "Customisable Workflows", "Integrates with APIs & Databases"],
       highlight: "Boost productivity and decision-making with AI-powered assistance",
-      icon: "M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z"
+      icon: "M12 2a1 1 0 011 1v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-1v1a1 1 0 11-2 0v-1H9a2 2 0 01-2-2V9H6a1 1 0 110-2h1V5a2 2 0 012-2h1V3a1 1 0 011-1zm-1 8a1 1 0 100 2 1 1 0 000-2zm4 0a1 1 0 100 2 1 1 0 000-2z"
     },
     {
       title: "Video & Content Creation",
@@ -802,7 +802,7 @@ export function ContactForm() {
 
   return (
     <div 
-      className="bg-black rounded-xl p-8 border border-gray-800 hover:border-green-400 transition-all duration-300"
+      className="bg-black rounded-xl py-12 px-8 border border-gray-800 hover:border-green-400 transition-all duration-300"
       style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.1)' }}
     >
       <h3 className="text-2xl font-bold text-white mb-6"
