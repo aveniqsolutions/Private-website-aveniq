@@ -1030,27 +1030,20 @@ export function Footer() {
               Professional web development and content creation services to help your business thrive online.
             </p>
           </div>
-                <a
-  href="tel:+32412345678"
-  className="flex items-center gap-6 p-8 bg-black/40 backdrop-blur-md border border-pink-500/20 rounded-xl hover:border-pink-500/60 hover:bg-black/60 transition-all duration-500 group"
->
-  <div className="relative">
-    <div className="absolute inset-0 bg-pink-500/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-
-    <div className="relative w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
-      <Phone className="text-white" size={28} />
-    </div>
-
-  </div>
-
-  <div className="flex-1">
-    <p className="text-pink-400 font-semibold text-sm mb-1">CALL ME</p>
-
-    <p className="text-white text-xl font-medium group-hover:text-pink-400 transition-colors duration-300">
-      +32 412 34 56 78
-    </p>
-  </div>
-</a>
+                <a href="tel:+32412345678" className="flex items-center gap-6 p-8 bg-black/40 backdrop-blur-md border border-pink-500/20 rounded-xl hover:border-pink-500/60 hover:bg-black/60 transition-all duration-500 group">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-pink-500/30 rounded-full blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                      <div className="relative w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-500">
+                        <Phone className="text-white" size={28} />
+                      </div>
+                  </div>
+                  <div className="flex-1">
+                     <p className="text-pink-400 font-semibold text-sm mb-1">CALL ME</p>
+                     <p className="text-white text-xl font-medium group-hover:text-pink-400 transition-colors duration-300">
+                        +32 412 34 56 78
+                     </p>
+                  </div>
+                </a>
 
           
           <div>
