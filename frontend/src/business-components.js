@@ -1046,7 +1046,8 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4"
                 style={{ textShadow: '0 0 10px rgba(34, 197, 94, 0.3)' }}>Contact</h3>
             <ul className="space-y-2 text-gray-400">
-              <li className="hover:text-green-400 transition-colors duration-200">contact@aveniq-solutions.com</li>
+              <li className="hover:text-green-400 transition-colors duration-200"><a href="mailto:contact@aveniq-solutions.com" className="text-gray-300 hover:text-green-400 transition-colors">
+                contact@aveniq-solutions.com</a></li>
               <li className="hover:text-green-400 transition-colors duration-200">Professional Support</li>
               <li className="hover:text-green-400 transition-colors duration-200">Quick Response Time</li>
             </ul>
