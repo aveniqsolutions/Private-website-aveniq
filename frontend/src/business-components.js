@@ -545,8 +545,8 @@ export function Portfolio() {
         {/* Websites Section */}
         {renderProjectGrid(websiteProjects, "Websites")}
 
-        {/* AI Chatbots Section */}
-        {renderProjectGrid(aiChatbotProjects, "AI Chatbots")}
+        // {/* AI Chatbots Section */}
+        // {renderProjectGrid(aiChatbotProjects, "AI Chatbots")}
 
         {/* Modal for Videos and Images */}
         {selectedItem && (
