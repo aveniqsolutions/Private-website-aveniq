@@ -386,9 +386,9 @@ export function Portfolio() {
       type: 'website',
       title: 'Corporate Website',
       description: 'Professional corporate website with CMS',
-      websiteUrl: 'https://example-corporate.com', // Replace with your actual website
-      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800',
-      tech: ['Vue.js', 'Laravel', 'MySQL']
+      websiteUrl: 'https://nexora-systems-nu.vercel.app/', // Replace with your actual website
+      imageUrl: './nexora.png',
+      tech: ['React', 'Craco', 'Python', 'MongoDB']
     },
     {
       id: 7,
