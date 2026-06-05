@@ -162,7 +162,7 @@ export function Hero() {
             <span className="block text-green-400" style={{ textShadow: '0 0 20px rgba(34, 197, 94, 0.5)' }}>Online Today</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Professional websites, fast landing pages, functional mobile apps and stunning video content 
+            Professional websites, fast landing pages, maximising ROAS and stunning video/social content 
             that help businesses establish a strong digital presence they can afford.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -1095,7 +1095,7 @@ export function Footer() {
               <span className="text-xl font-bold text-white">Aveniq Solutions</span>
             </div>
             <p className="text-gray-400">
-              Professional web development and content creation services to help your business thrive online.
+              Professional web development, marketing & content creation services to help your business thrive online.
             </p>
           </div>
 
@@ -1106,7 +1106,7 @@ export function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li className="hover:text-green-400 transition-colors duration-200">Landing Pages</li>
               <li className="hover:text-green-400 transition-colors duration-200">Professional Websites</li>
-              <li className="hover:text-green-400 transition-colors duration-200">AI Agents</li>
+              <li className="hover:text-green-400 transition-colors duration-200">Marketing</li>
               <li className="hover:text-green-400 transition-colors duration-200">Video & Content Creation</li>
             </ul>
           </div>
