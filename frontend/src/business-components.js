@@ -212,7 +212,7 @@ export function Services() {
     "Creative & Copy Recommendations",
     "Performance Analysis & Optimization"
   ],
-  highlight: "Maximize ROAS with data-driven Meta advertising strategies and automated campaign optimization",
+  highlight: "Maximize ROAS with data-driven Meta Ad strategies & automated campaign optimization",
   icon: "M12 2a1 1 0 011 1v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-1v1a1 1 0 11-2 0v-1H9a2 2 0 01-2-2V9H6a1 1 0 110-2h1V5a2 2 0 012-2h1V3a1 1 0 011-1zm-1 8a1 1 0 100 2 1 1 0 000-2zm4 0a1 1 0 100 2 1 1 0 000-2z"
 },
     {
