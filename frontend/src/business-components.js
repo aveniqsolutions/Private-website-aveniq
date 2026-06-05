@@ -452,7 +452,16 @@ export function Portfolio() {
       websiteUrl: 'https://obsidian-gains-gym.vercel.app/',
       imageUrl: '/Obsidian_Gym.png',
       tech: ['React', 'JSX', 'Python', 'Tailwind CSS']
-    }
+    },
+    {
+      id: 9,
+      type: 'website',
+      title: 'Atelier Vanta',
+      description: 'Full Stack Architectural Agency Website',
+      websiteUrl: 'https://architect-site-kohl.vercel.app/',
+      imageUrl: '/Architect_site.png',
+      tech: ['React', 'JSX', 'Python' ]
+    },
   
   ];
 
