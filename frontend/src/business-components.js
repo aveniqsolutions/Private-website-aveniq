@@ -412,7 +412,7 @@ export function Portfolio() {
       id: 5,
       type: 'website',
       title: ' MAISON ÉLISE',
-      description: 'Luxury Patisserie Website',
+      description: 'Luxury Patisserie Website with Language Integration',
       websiteUrl: 'https://luxury-patisserie-site.vercel.app/',
       imageUrl: '/Maison.png',
       tech: ['React', 'JSX', 'Python', 'Tailwind CSS' ]
