@@ -411,11 +411,11 @@ export function Portfolio() {
     {
       id: 5,
       type: 'website',
-      title: 'E-commerce Platform',
-      description: 'Modern e-commerce solution with payment integration',
-      websiteUrl: 'https://example-ecommerce.com', // Replace with your actual website
-      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800',
-      tech: ['React', 'Node.js', 'MongoDB', 'Stripe']
+      title: ' MAISON ÉLISE',
+      description: 'Luxury Patisserie Website',
+      websiteUrl: 'https://luxury-patisserie-site.vercel.app/',
+      imageUrl: '/Maison.png',
+      tech: ['React', 'JSX', 'Python', 'Tailwind CSS' ]
     },
     {
       id: 6,
@@ -462,7 +462,15 @@ export function Portfolio() {
       imageUrl: '/Architect_site.png',
       tech: ['React', 'JSX', 'Python' ]
     },
-  
+    {
+      id: 11,
+      type: 'website',
+      title: ' MAISON ÉLISE',
+      description: 'Luxury Patisserie Website',
+      websiteUrl: 'https://architect-site-kohl.vercel.app/',
+      imageUrl: '/Architect_site.png',
+      tech: ['React', 'JSX', 'Python' ]
+    },
   ];
 
   // AI Chatbot Projects (3 chatbots)
