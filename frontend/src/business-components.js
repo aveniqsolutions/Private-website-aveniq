@@ -431,10 +431,20 @@ export function Portfolio() {
       type: 'website',
       title: 'Artistic Portofolio Website',
       description: 'Creative portfolio website with animations',
+      websiteUrl: 'socialmedia-manager-portfolio.vercel.app',
+      imageUrl: '/webthumb.png',
+      tech: ['React', 'Radix', 'Python', 'Tailwind CSS']
+    }
+    {
+      id: 8,
+      type: 'website',
+      title: 'Social Media Agency',
+      description: 'Creative portfolio website with animations',
       websiteUrl: 'https://hum-aur-zindagi.vercel.app/',
       imageUrl: '/webthumb.png',
       tech: ['React', 'Framer Motion', 'Tailwind CSS']
     }
+  
   ];
 
   // AI Chatbot Projects (3 chatbots)
