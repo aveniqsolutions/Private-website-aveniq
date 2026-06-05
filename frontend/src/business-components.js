@@ -205,7 +205,7 @@ export function Services() {
     },
    {
   title: "Meta Ads Strategist",
-  description: "An AI-powered marketing strategist that plans, optimizes, and scales Facebook & Instagram advertising campaigns using real-time performance insights.",
+  description: "Marketing strategies that plans, optimises and scales Facebook & Instagram ad campaigns using real-time performance insights.",
   features: [
     "Campaign Strategy & Planning",
     "Audience Research & Targeting",
