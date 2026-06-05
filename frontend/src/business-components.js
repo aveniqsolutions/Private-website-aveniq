@@ -434,7 +434,7 @@ export function Portfolio() {
       websiteUrl: 'socialmedia-manager-portfolio.vercel.app',
       imageUrl: '/webthumb.png',
       tech: ['React', 'Radix', 'Python', 'Tailwind CSS']
-    }
+    },
     {
       id: 8,
       type: 'website',
