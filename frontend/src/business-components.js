@@ -443,9 +443,9 @@ export function Portfolio() {
       websiteUrl: 'https://socialmedia-manager-portfolio.vercel.app/',
       imageUrl: '/social media portfolio.png',
       tech: ['React', 'Framer Motion', 'Python', 'Tailwind CSS']
-    }
+    },
     {
-      id: 8,
+      id: 9,
       type: 'website',
       title: 'Obsidian Gains Gym',
       description: 'Full Stack Gym Website',
