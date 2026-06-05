@@ -454,7 +454,7 @@ export function Portfolio() {
       tech: ['React', 'JSX', 'Python', 'Tailwind CSS']
     },
     {
-      id: 9,
+      id: 10,
       type: 'website',
       title: 'Atelier Vanta',
       description: 'Full Stack Architectural Agency Website',
