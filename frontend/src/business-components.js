@@ -237,17 +237,15 @@ export function Services() {
         </div>
 
         {/* Bento Grid Layout with Neon Green Shadows */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              className={`bg-gray-900 border border-gray-800 rounded-2xl p-8 hover:border-green-400 transition-all duration-300 reveal-up shadow-lg hover:shadow-green-400/20 ${
-                index === 1 ? 'md:col-span-2 lg:col-span-1' : ''
-              } ${index === 3 ? 'md:col-span-2 lg:col-span-1' : ''}`}
-              style={{
-                boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
-              }}
-            >
+          <div
+            key={index}
+            className="bg-gray-900 border border-gray-800 rounded-2xl p-8 flex flex-col h-full hover:border-green-400 transition-all duration-300 reveal-up shadow-lg hover:shadow-green-400/20"
+            style={{
+              boxShadow: '0 0 20px rgba(34, 197, 94, 0.1), inset 0 0 20px rgba(34, 197, 94, 0.05)'
+    }}
+  >
               {/* Service Header */}
               <div className="mb-6">
                 <div className="w-12 h-12 bg-green-400/20 rounded-xl flex items-center justify-center mb-4 shadow-lg shadow-green-400/30">
@@ -265,7 +263,7 @@ export function Services() {
               </div>
 
               {/* Features List */}
-              <div className="space-y-3">
+              <div className="space-y-3 mt-6 pt-6 border-t border-gray-800 flex-grow">
                 <h4 className="text-white font-semibold mb-3">Key Features:</h4>
                 {service.features.map((feature, idx) => (
                   <div key={idx} className="flex items-center">
@@ -274,17 +272,50 @@ export function Services() {
                   </div>
                 ))}
               </div>
-
-              {/* Call to Action */}
-              <div className="mt-8 pt-6 border-t border-gray-800">
-                <button 
-                  onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                  className="w-full bg-gray-800 hover:bg-green-600 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200 hover:transform hover:scale-105 hover:shadow-lg hover:shadow-green-400/30 border border-gray-700 hover:border-green-400"
-                >
-                  Get Started
-                </button>
-              </div>
             </div>
+          ))}
+        </div>
+        <div className="text-center mt-16 mb-8">
+          <p className="text-green-400 font-semibold tracking-wider uppercase mb-2">
+            Ready To Get Started?
+          </p>
+
+          <h3 className="text-3xl font-bold text-white mb-3">
+            Let's build something great together
+          </h3>
+
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Choose the service that best fits your needs and we'll help you achieve your business goals.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          {services.map((service, index) => (
+            <button
+              key={index}
+              onClick={() =>
+                document.getElementById("contact").scrollIntoView({
+                  behavior: "smooth",
+                })
+              }
+              className="h-14 rounded-xl border border-gray-700 bg-gray-900 text-white font-medium hover:border-green-400 hover:text-green-400 transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              <span>Get Started with {service.title}</span>
+        
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           ))}
         </div>
 
