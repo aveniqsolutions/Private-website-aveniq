@@ -431,7 +431,7 @@ export function Portfolio() {
       type: 'website',
       title: 'Artistic Portofolio Website',
       description: 'Creative portfolio website with animations',
-      websiteUrl: 'socialmedia-manager-portfolio.vercel.app',
+      websiteUrl: 'https://hum-aur-zindagi.vercel.app/',
       imageUrl: '/webthumb.png',
       tech: ['React', 'Radix', 'Python', 'Tailwind CSS']
     },
@@ -439,8 +439,8 @@ export function Portfolio() {
       id: 8,
       type: 'website',
       title: 'Social Media Agency',
-      description: 'Creative portfolio website with animations',
-      websiteUrl: 'socialmedia-manager-portfolio.vercel.app',
+      description: 'Maarketing portfolio website with animations',
+      websiteUrl: 'https://socialmedia-manager-portfolio.vercel.app/',
       imageUrl: '/social media portfolio.png',
       tech: ['React', 'Framer Motion', 'Tailwind CSS']
     }
