@@ -439,10 +439,19 @@ export function Portfolio() {
       id: 8,
       type: 'website',
       title: 'Social Media Agency',
-      description: 'Maarketing portfolio website with animations',
+      description: 'Marketing portfolio website with animations',
       websiteUrl: 'https://socialmedia-manager-portfolio.vercel.app/',
       imageUrl: '/social media portfolio.png',
       tech: ['React', 'Framer Motion', 'Python', 'Tailwind CSS']
+    }
+    {
+      id: 8,
+      type: 'website',
+      title: 'Obsidian Gains Gym',
+      description: 'Full Stack Gym Website',
+      websiteUrl: 'https://obsidian-gains-gym.vercel.app/',
+      imageUrl: '/Obsidian_Gym.png',
+      tech: ['React', 'JSX', 'Python', 'Tailwind CSS']
     }
   
   ];
