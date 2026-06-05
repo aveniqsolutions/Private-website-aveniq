@@ -442,7 +442,7 @@ export function Portfolio() {
       description: 'Maarketing portfolio website with animations',
       websiteUrl: 'https://socialmedia-manager-portfolio.vercel.app/',
       imageUrl: '/social media portfolio.png',
-      tech: ['React', 'Framer Motion', 'Tailwind CSS']
+      tech: ['React', 'Framer Motion', 'Python', 'Tailwind CSS']
     }
   
   ];
