@@ -203,13 +203,18 @@ export function Services() {
       highlight: "Complete business solutions with modern functionality",
       icon: "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
     },
-    {
-      title: "AI Agents",
-      description: "An intelligent agent that automates tasks, answers questions & helps users make data-driven decisions in real-time.",
-      features: ["Human Like Model", "24/7 Availability", "Customisable Workflows", "Integrates with APIs & Databases"],
-      highlight: "Boost productivity and decision-making with AI-powered assistance",
-      icon: "M12 2a1 1 0 011 1v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-1v1a1 1 0 11-2 0v-1H9a2 2 0 01-2-2V9H6a1 1 0 110-2h1V5a2 2 0 012-2h1V3a1 1 0 011-1zm-1 8a1 1 0 100 2 1 1 0 000-2zm4 0a1 1 0 100 2 1 1 0 000-2z"
-    },
+   {
+  title: "Meta Ads Strategist",
+  description: "An AI-powered marketing strategist that plans, optimizes, and scales Facebook & Instagram advertising campaigns using real-time performance insights.",
+  features: [
+    "Campaign Strategy & Planning",
+    "Audience Research & Targeting",
+    "Creative & Copy Recommendations",
+    "Performance Analysis & Optimization"
+  ],
+  highlight: "Maximize ROAS with data-driven Meta advertising strategies and automated campaign optimization",
+  icon: "M12 2a1 1 0 011 1v1h1a2 2 0 012 2v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-1v1a1 1 0 11-2 0v-1H9a2 2 0 01-2-2V9H6a1 1 0 110-2h1V5a2 2 0 012-2h1V3a1 1 0 011-1zm-1 8a1 1 0 100 2 1 1 0 000-2zm4 0a1 1 0 100 2 1 1 0 000-2z"
+}
     {
       title: "Video & Content Creation",
       description: "Professional video editing and animation for engaging social media content",
