@@ -451,7 +451,7 @@ export function Portfolio() {
       description: 'Full Stack Gym Website',
       websiteUrl: 'https://obsidian-gains-gym.vercel.app/',
       imageUrl: '/Obsidian_Gym.png',
-      tech: ['React', 'JSX', 'Python', 'Tailwind CSS']
+      tech: ['React', 'Python', 'Tailwind CSS']
     },
     {
       id: 10,
@@ -465,11 +465,11 @@ export function Portfolio() {
     {
       id: 11,
       type: 'website',
-      title: ' MAISON ÉLISE',
-      description: 'Luxury Patisserie Website',
-      websiteUrl: 'https://architect-site-kohl.vercel.app/',
-      imageUrl: '/Architect_site.png',
-      tech: ['React', 'JSX', 'Python' ]
+      title: ' The Arisan Brew',
+      description: 'Luxury Full Stack Cafe Website',
+      websiteUrl: 'https://cafe-website-theta-five.vercel.app/',
+      imageUrl: '/artisan-brew.png',
+      tech: ['React', 'JSX', 'Python', 'Lucide' ]
     },
   ];
 
