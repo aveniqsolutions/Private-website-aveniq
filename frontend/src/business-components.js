@@ -471,6 +471,15 @@ export function Portfolio() {
       imageUrl: '/artisan-brew.png',
       tech: ['React', 'JSX', 'Python', 'Lucide' ]
     },
+    {
+      id: 12,
+      type: 'website',
+      title: ' FlowFix Plumbing',
+      description: 'Full Stack Plumbing Site with Call Option',
+      websiteUrl: 'https://plumbing-site-opal.vercel.app/',
+      imageUrl: '/flowfix.png',
+      tech: ['React', 'JSX', 'Python' ]
+    },
   ];
 
   // AI Chatbot Projects (3 chatbots)
