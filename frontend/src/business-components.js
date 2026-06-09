@@ -498,8 +498,17 @@ export function Portfolio() {
       imageUrl: '/aurum.png',
       tech: ['React', 'CRACO', 'Python' ]
     },
+    {
+      id: 15,
+      type: 'website',
+      title: 'Radiyah UK Ebook Store',
+      description: 'Luxury jewelry brand website featuring refined collections and visuals',
+      websiteUrl: 'https://radiyahuk.vercel.app/',
+      imageUrl: '/radiyahuk.png',
+      tech: ['React', 'JSX', 'Python' ]
+    },
   ];
-
+  
   // AI Chatbot Projects (3 chatbots)
   // const aiChatbotProjects = [
   //   {
