@@ -485,7 +485,7 @@ export function Portfolio() {
       type: 'website',
       title: ' Portfolio Website with Animations',
       description: 'Modern ortfolio with smooth animations and responsive design',
-      websiteUrl: 'https://plumbing-site-opal.vercel.app/',
+      websiteUrl: 'https://portfoliotech-gdy98bc28-aveniqsolutions-7442s-projects.vercel.app/',
       imageUrl: '/portfolio.png',
       tech: ['React', 'JSX', 'Python' ]
     },
