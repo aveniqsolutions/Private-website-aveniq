@@ -466,7 +466,7 @@ export function Portfolio() {
       id: 11,
       type: 'website',
       title: ' The Arisan Brew',
-      description: 'Luxury Full Stack cafe website with animations',
+      description: 'Modern café website with elegant design, smooth animations, and menu showcase',
       websiteUrl: 'https://cafe-website-theta-five.vercel.app/',
       imageUrl: '/artisan-brew.png',
       tech: ['React', 'JSX', 'Python', 'Lucide' ]
@@ -475,7 +475,7 @@ export function Portfolio() {
       id: 12,
       type: 'website',
       title: ' FlowFix Plumbing',
-      description: 'Full stack plumbing site with call option and form',
+      description: 'Modern plumbing website showcasing services, repairs, and emergency solutions',
       websiteUrl: 'https://plumbing-site-opal.vercel.app/',
       imageUrl: '/flowfix.png',
       tech: ['React', 'JSX', 'Python' ]
@@ -484,7 +484,7 @@ export function Portfolio() {
       id: 13,
       type: 'website',
       title: ' Portfolio Website with Animations',
-      description: 'Modern ortfolio with smooth animations and responsive design',
+      description: 'Modern portfolio with smooth animations and responsive design',
       websiteUrl: 'https://portfoliotech-gdy98bc28-aveniqsolutions-7442s-projects.vercel.app/',
       imageUrl: '/portfolio.png',
       tech: ['React', 'JSX', 'Python' ]
