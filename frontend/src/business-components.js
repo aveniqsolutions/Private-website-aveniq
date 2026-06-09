@@ -483,11 +483,20 @@ export function Portfolio() {
     {
       id: 13,
       type: 'website',
-      title: ' Portfolio Website with Animations',
+      title: ' Freelancer Portfolio',
       description: 'Modern portfolio with smooth animations and responsive design',
       websiteUrl: 'https://portfoliotech-gdy98bc28-aveniqsolutions-7442s-projects.vercel.app/',
       imageUrl: '/porfolio.png',
       tech: ['React', 'JSX', 'Python' ]
+    },
+    {
+      id: 14,
+      type: 'website',
+      title: 'Aurum Jewellery Site',
+      description: 'Luxury jewelry brand website featuring refined collections and visuals',
+      websiteUrl: 'https://aurum-jewelry-site-rc2dx09ue-aveniqsolutions-7442s-projects.vercel.app/',
+      imageUrl: '/aurum.png',
+      tech: ['React', 'CRACO', 'Python' ]
     },
   ];
 
