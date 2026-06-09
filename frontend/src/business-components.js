@@ -420,6 +420,15 @@ export function Portfolio() {
     {
       id: 6,
       type: 'website',
+      title: 'E-commerce Shopify Store',
+      description: 'Premium eastern wear brand focused on quality, elegance and sophistication',
+      websiteUrl: 'https://www.pahnava.pk/',
+      imageUrl: './pahnava.png',
+      tech: ['Shopify', 'HTML', 'CSS']
+    },
+     {
+      id: 7,
+      type: 'website',
       title: 'Corporate Website',
       description: 'AI & software company building scalable systems with integrated CMS solutions',
       websiteUrl: 'https://nexora-systems-nu.vercel.app/',
@@ -427,7 +436,7 @@ export function Portfolio() {
       tech: ['React', 'Craco', 'Python', 'MongoDB']
     },
     {
-      id: 7,
+      id: 8,
       type: 'website',
       title: 'Artistic Portofolio Website',
       description: 'Creative art portfolio showcasing original artwork & visual storytelling',
@@ -436,7 +445,7 @@ export function Portfolio() {
       tech: ['React', 'Radix', 'Python', 'Tailwind CSS']
     },
     {
-      id: 8,
+      id: 9,
       type: 'website',
       title: 'Social Media Agency',
       description: 'Portfolio website for social media management, video production & digital marketing',
@@ -445,7 +454,7 @@ export function Portfolio() {
       tech: ['React', 'Framer Motion', 'Python', 'Tailwind CSS']
     },
     {
-      id: 9,
+      id: 10,
       type: 'website',
       title: 'Obsidian Gains Gym',
       description: 'High-energy fitness website designed for gyms & fitness brands',
@@ -454,7 +463,7 @@ export function Portfolio() {
       tech: ['React', 'Python', 'Tailwind CSS']
     },
     {
-      id: 10,
+      id: 11,
       type: 'website',
       title: 'Atelier Vanta',
       description: 'Elegant architecture website featuring projects, concepts & creative vision',
@@ -463,7 +472,7 @@ export function Portfolio() {
       tech: ['React', 'JSX', 'Python' ]
     },
     {
-      id: 11,
+      id: 12,
       type: 'website',
       title: ' The Arisan Brew',
       description: 'Modern café website with elegant design, smooth animations, and menu showcase',
@@ -472,7 +481,7 @@ export function Portfolio() {
       tech: ['React', 'JSX', 'Python', 'Lucide' ]
     },
     {
-      id: 12,
+      id: 13,
       type: 'website',
       title: ' FlowFix Plumbing',
       description: 'Modern plumbing website showcasing services, repairs, and emergency solutions',
@@ -481,7 +490,7 @@ export function Portfolio() {
       tech: ['React', 'JSX', 'Python' ]
     },
     {
-      id: 13,
+      id: 14,
       type: 'website',
       title: ' Freelancer Portfolio',
       description: 'Modern portfolio with smooth animations and responsive design',
@@ -490,7 +499,7 @@ export function Portfolio() {
       tech: ['React', 'JSX', 'Python' ]
     },
     {
-      id: 14,
+      id: 15,
       type: 'website',
       title: 'Aurum Jewellery Site',
       description: 'Luxury jewelry brand website featuring refined collections and visuals',
@@ -499,7 +508,7 @@ export function Portfolio() {
       tech: ['React', 'CRACO', 'Python' ]
     },
     {
-      id: 15,
+      id: 16,
       type: 'website',
       title: 'Radiyah UK Ebook Store',
       description: 'Luxury jewelry brand website featuring refined collections and visuals',
