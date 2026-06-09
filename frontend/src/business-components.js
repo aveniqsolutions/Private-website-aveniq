@@ -412,7 +412,7 @@ export function Portfolio() {
       id: 5,
       type: 'website',
       title: ' MAISON ÉLISE',
-      description: 'Luxury Patisserie Website with Language Integration',
+      description: 'Premium bakery website focused on luxury pastries and refined desserts',
       websiteUrl: 'https://luxury-patisserie-site.vercel.app/',
       imageUrl: '/Maison.png',
       tech: ['React', 'JSX', 'Python', 'Tailwind CSS' ]
@@ -421,8 +421,8 @@ export function Portfolio() {
       id: 6,
       type: 'website',
       title: 'Corporate Website',
-      description: 'Professional corporate website with CMS',
-      websiteUrl: 'https://nexora-systems-nu.vercel.app/', // Replace with your actual website
+      description: 'AI & software company building scalable systems with integrated CMS solutions',
+      websiteUrl: 'https://nexora-systems-nu.vercel.app/',
       imageUrl: './nexora.png',
       tech: ['React', 'Craco', 'Python', 'MongoDB']
     },
@@ -430,7 +430,7 @@ export function Portfolio() {
       id: 7,
       type: 'website',
       title: 'Artistic Portofolio Website',
-      description: 'Creative portfolio website with animations',
+      description: 'Creative art portfolio showcasing original artwork & visual storytelling',
       websiteUrl: 'https://hum-aur-zindagi.vercel.app/',
       imageUrl: '/webthumb.png',
       tech: ['React', 'Radix', 'Python', 'Tailwind CSS']
@@ -439,7 +439,7 @@ export function Portfolio() {
       id: 8,
       type: 'website',
       title: 'Social Media Agency',
-      description: 'Marketing portfolio website with animations',
+      description: 'Portfolio website for social media management, video production & digital marketing',
       websiteUrl: 'https://socialmedia-manager-portfolio.vercel.app/',
       imageUrl: '/social media portfolio.png',
       tech: ['React', 'Framer Motion', 'Python', 'Tailwind CSS']
@@ -448,7 +448,7 @@ export function Portfolio() {
       id: 9,
       type: 'website',
       title: 'Obsidian Gains Gym',
-      description: 'Full Stack Gym Website',
+      description: 'High-energy fitness website designed for gyms & fitness brands',
       websiteUrl: 'https://obsidian-gains-gym.vercel.app/',
       imageUrl: '/Obsidian_Gym.png',
       tech: ['React', 'Python', 'Tailwind CSS']
@@ -457,7 +457,7 @@ export function Portfolio() {
       id: 10,
       type: 'website',
       title: 'Atelier Vanta',
-      description: 'Full Stack Architectural Agency Website',
+      description: 'Elegant architecture website featuring projects, concepts & creative vision',
       websiteUrl: 'https://architect-site-kohl.vercel.app/',
       imageUrl: '/Architect_site.png',
       tech: ['React', 'JSX', 'Python' ]
@@ -466,7 +466,7 @@ export function Portfolio() {
       id: 11,
       type: 'website',
       title: ' The Arisan Brew',
-      description: 'Luxury Full Stack Cafe Website',
+      description: 'Luxury Full Stack cafe website with animations',
       websiteUrl: 'https://cafe-website-theta-five.vercel.app/',
       imageUrl: '/artisan-brew.png',
       tech: ['React', 'JSX', 'Python', 'Lucide' ]
@@ -475,7 +475,16 @@ export function Portfolio() {
       id: 12,
       type: 'website',
       title: ' FlowFix Plumbing',
-      description: 'Full Stack Plumbing Site with Call Option',
+      description: 'Full stack plumbing site with call option and form',
+      websiteUrl: 'https://plumbing-site-opal.vercel.app/',
+      imageUrl: '/flowfix.png',
+      tech: ['React', 'JSX', 'Python' ]
+    },
+    {
+      id: 13,
+      type: 'website',
+      title: ' Portfolio Website with Animations',
+      description: 'Modern ortfolio with smooth animations and responsive design',
       websiteUrl: 'https://plumbing-site-opal.vercel.app/',
       imageUrl: '/flowfix.png',
       tech: ['React', 'JSX', 'Python' ]
