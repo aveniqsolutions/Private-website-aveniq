@@ -486,7 +486,7 @@ export function Portfolio() {
       title: ' Portfolio Website with Animations',
       description: 'Modern ortfolio with smooth animations and responsive design',
       websiteUrl: 'https://plumbing-site-opal.vercel.app/',
-      imageUrl: '/flowfix.png',
+      imageUrl: '/portfolio.png',
       tech: ['React', 'JSX', 'Python' ]
     },
   ];
