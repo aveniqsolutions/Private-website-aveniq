@@ -486,7 +486,7 @@ export function Portfolio() {
       title: ' Portfolio Website with Animations',
       description: 'Modern portfolio with smooth animations and responsive design',
       websiteUrl: 'https://portfoliotech-gdy98bc28-aveniqsolutions-7442s-projects.vercel.app/',
-      imageUrl: '/portfolio.png',
+      imageUrl: '/porfolio.png',
       tech: ['React', 'JSX', 'Python' ]
     },
   ];
