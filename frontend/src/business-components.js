@@ -403,6 +403,15 @@ export function Portfolio() {
       websiteUrl: 'https://www.behance.net/gallery/244554625/Social-Media-Content-Creation',
       imageUrl: '/imgthumb.png',
       tools: ['Photoshop', 'Canva', 'Lightroom']
+    },
+    {
+      id: 3,
+      type: 'website',
+      title: 'Cinematic Real Estate Walkthrough Videos',
+      description: 'Cinematic Real Estate Walkthroughs with smooth animations',
+      websiteUrl: 'https://www.behance.net/gallery/252770193/Real-Estate-Cinematic-AI-Walkthrough-Videos',
+      imageUrl: '/video.png',
+      tools: ['Canva', 'Photos', 'Claude']
     }
   ];
 
